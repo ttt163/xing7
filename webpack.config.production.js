@@ -6,6 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const autoprefixer = require('autoprefixer')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const ROOT_PATH = resolve(__dirname)
 const SRC_PATH = resolve(ROOT_PATH, 'src')
@@ -18,10 +19,8 @@ module.exports = {
     entry: {
         index: resolve(SRC_PATH, 'index.jsx'),
         vendors: [
-            'antd',
             'axios',
             'babel-polyfill',
-            'draft-js',
             'react',
             'react-dom',
             'react-redux',
@@ -36,7 +35,7 @@ module.exports = {
         path: DIST_PATH,
         filename: 'js/[name]-[hash:8].js',
         chunkFilename: 'js/[name]-[chunkhash:8].js',
-        publicPath: '../'
+        publicPath: './'
     },
     module: {
         rules: [
@@ -88,14 +87,18 @@ module.exports = {
     plugins: [
         new StyleLintPlugin(),
         new UglifyJSPlugin({
-            compress: {
-                warnings: false,
-                drop_console: false
-            },
-            beautify: false,
-            comments: false,
-            extractComments: false,
-            sourceMap: false
+            uglifyOptions: {
+                compress: {
+                    warnings: false,
+                    drop_console: false
+                },
+                output: {
+                    // 最紧凑的输出
+                    beautify: false,
+                    // 删除所有的注释
+                    comments: false,
+                }
+            }
         }),
         new CleanWebpackPlugin([DIST_PATH], {
             root: '',
@@ -131,8 +134,9 @@ module.exports = {
             filepath: DIST_PATH,
             template: resolve(TEM_PATH, 'index.html'),
             chunks: ['index', 'vendors'],
-            filename: 'html/index.html',
+            filename: 'index.html',
             inject: 'body'
-        })
+        }),
+        new CopyWebpackPlugin([{ from: 'assets', to: 'assets' }])
     ]
 }

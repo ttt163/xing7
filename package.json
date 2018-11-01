@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --history-api-fallback --inline --hot",
     "build": "SET BABEL_ENV=production&webpack --config webpack.config.production.js",
-    "macBuild": "NODE_ENV=production webpack --config ./webpack.config.production.js --progress"
+    "macBuild": "NODE_ENV=production webpack --config ./webpack.config.production.js"
   },
   "author": "",
   "license": "ISC",
