@@ -1,14 +1,8 @@
-/**
- * Author：zhoushuanglong
- * Time：2017/7/27
- * Description：root reducer
- */
-
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
-import gameListInfo from './gameListInfo'
+import publicInfo from './public'
 const reducers = Object.assign({
-    gameListInfo,
+    publicInfo,
     routing: routerReducer
 })
 
