@@ -1,0 +1,8 @@
+域名:xingqiclub.com
+IP:188.131.179.44
+端口：22
+
+用户名：root
+密码：xingqi123
+
+
