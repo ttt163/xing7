@@ -1,0 +1,47 @@
+/**
+ * Author：tantingting
+ * Time：2018/11/5
+ * Description：Description
+ */
+@import "../../../libs/scss/rem";
+
+.footer-warp {
+    background-color: #f9f9f9;
+    height: rem(98);
+    display: flex;
+    justify-content: space-around;
+
+    a {
+        display: block;
+        color: #999;
+        text-align: center;
+        //width: 50%;
+
+        label {
+            display: block;
+            height: rem(44);
+            font-size: rem(20);
+            line-height: rem(44);
+        }
+
+        i {
+            display: block;
+            height: rem(54);
+            font-size: rem(34);
+            line-height: rem(84);
+            color: #111;
+
+            &.icon-user {
+                font-size: rem(42);
+            }
+        }
+
+        &.active {
+            color: #ff7f00;
+
+            i {
+                color: #ff7f00;
+            }
+        }
+    }
+}

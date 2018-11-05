@@ -3,7 +3,7 @@ import './index.scss'
 import {setPageTitle} from '../../actions/public'
 import {connect} from 'react-redux'
 
-class Enter extends Component {
+class Activity extends Component {
     componentWillMount () {
         const {dispatch} = this.props
         dispatch(setPageTitle('首页'))
@@ -20,4 +20,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(Enter)
+export default connect(mapStateToProps)(Activity)

@@ -4,9 +4,12 @@
 
 html,
 body,
-#root,
-.ant-layout {
+#root {
     height: 100%;
+}
+
+body {
+    background: #f6f6f6;
 }
 
 /* webkit滚动条样式 */

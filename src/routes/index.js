@@ -9,13 +9,13 @@ const rootRoutes = <div>
     }}>
         <IndexRoute getComponent={(nextState, callback) => {
             require.ensure([], (require) => {
-                callback(null, require('../containers/Enter').default)
-            }, 'Enter')
+                callback(null, require('../containers/Activity').default)
+            }, 'Activity')
         }}/>
-        <Route path='/enter' getComponent={(nextState, callback) => {
+        <Route path='/activity' getComponent={(nextState, callback) => {
             require.ensure([], (require) => {
-                callback(null, require('../containers/Enter').default)
-            }, 'Enter')
+                callback(null, require('../containers/Activity').default)
+            }, 'Activity')
         }}/>
     </Route>
 </div>
