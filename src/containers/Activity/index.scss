@@ -1,6 +1,24 @@
 @import "../../../libs/scss/rem";
 
-body {
-    background: #fff;
-    font-size: rem(24);
+.activity-wrap {
+    padding-top: rem(10);
+    height: 100%;
+    overflow: auto;
+
+    .loading-more {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+
+        img {
+            width: rem(35);
+            height: rem(32);
+        }
+
+        span {
+            color: #c6c6c6;
+            font-size: rem(20);
+            margin-left: rem(30);
+        }
+    }
 }

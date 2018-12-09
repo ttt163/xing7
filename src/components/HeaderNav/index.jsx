@@ -20,7 +20,7 @@ export default class Header extends Component {
                     <div className="nav-main">
                         {
                             navData.map((item, index) => (
-                                <Link className="nav-item" key={index} to={item.path}>
+                                <Link className="nav-item" key={index} to={item.path} onClick={() => { hideNav() }}>
                                     <label>{item.label}</label>
                                     <i className="iconfont icon-right"></i>
                                 </Link>

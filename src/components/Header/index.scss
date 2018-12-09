@@ -5,6 +5,10 @@
  */
 @import "../../../libs/scss/rem";
 
+body {
+    background-color: #f9f9f9;
+}
+
 .header-warp {
     height: rem(88);
     width: 100%;

@@ -27,13 +27,13 @@ class Main extends Component {
     }
 
     render () {
-        const {publicInfo} = this.props
+        const {publicInfo, location} = this.props
         const {navIsShow} = this.state
         const {title} = publicInfo
         return <div className="page-warp">
             <Title render={title}/>
             <div className="page-main">
-                <Header pageTitle={title} showNav={() => this.showNav()} />
+                <Header path={location.pathname} pageTitle={title} showNav={() => this.showNav()} />
                 <div className='page-main'>
                     {this.props.children}
                 </div>

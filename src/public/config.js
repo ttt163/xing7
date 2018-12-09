@@ -6,8 +6,10 @@
 
 // 导航
 const navData = [
-    {key: 'activity', label: '活动汇总', path: '/', icon: 'icon-activity'},
-    {key: 'order', label: '订单', path: '/order', icon: 'icon-user'}
+    {key: 'home', label: '首页', path: '/', icon: 'icon-home'},
+    {key: 'activity', label: '活动汇总', path: '/activity', icon: 'icon-activity'},
+    {key: 'leader', label: '领队招募', path: '/leader', icon: ''},
+    {key: 'user', label: '个人中心', path: '/user', icon: 'icon-user'}
 ]
 
 export {

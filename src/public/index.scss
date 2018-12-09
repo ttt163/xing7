@@ -10,33 +10,49 @@ body,
 
 body {
     background: #f6f6f6;
+
+    img {
+        width: 100%;
+    }
+
+    a,
+    a:hover,
+    a:active,
+    a:visited,
+    a:link,
+    a:focus {
+        -webkit-tap-highlight-color: transparent;
+        outline: none;
+        background: none;
+        text-decoration: none;
+    }
 }
 
 /* webkit滚动条样式 */
-* {
-    &::-webkit-scrollbar {
-        width: 3px;
-        height: 3px;
-    }
-
-    &::-webkit-scrollbar-button {
-        background-color: #f0f0f0;
-    }
-
-    &::-webkit-scrollbar-track {
-        background: #f0f0f0;
-    }
-
-    &::-webkit-scrollbar-track-piece {
-        background: #f0f0f0;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background: #bbb;
-        border-radius: 5px;
-    }
-
-    &::-webkit-scrollbar-corner {
-        background: #f0f0f0;
-    }
-}
+//* {
+//    &::-webkit-scrollbar {
+//        width: 3px;
+//        height: 3px;
+//    }
+//
+//    &::-webkit-scrollbar-button {
+//        background-color: #f0f0f0;
+//    }
+//
+//    &::-webkit-scrollbar-track {
+//        background: #f0f0f0;
+//    }
+//
+//    &::-webkit-scrollbar-track-piece {
+//        background: #f0f0f0;
+//    }
+//
+//    &::-webkit-scrollbar-thumb {
+//        background: #bbb;
+//        border-radius: 5px;
+//    }
+//
+//    &::-webkit-scrollbar-corner {
+//        background: #f0f0f0;
+//    }
+//}
