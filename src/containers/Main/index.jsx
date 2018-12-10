@@ -7,8 +7,8 @@ import Footer from '../../components/Footer'
 import HeaderNav from '../../components/HeaderNav'
 
 class Main extends Component {
-    constructor () {
-        super()
+    constructor (props) {
+        super(props)
         this.state = {
             navIsShow: false
         }
@@ -37,7 +37,9 @@ class Main extends Component {
                 <div className='page-main'>
                     {this.props.children}
                 </div>
-                <Footer/>
+                {
+                    /(\/activity-detail)/.test(location.pathname) ? '' : <Footer/>
+                }
             </div>
             <HeaderNav isShow={navIsShow} hideNav={() => this.hideNav()} />
         </div>

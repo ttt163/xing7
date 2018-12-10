@@ -10,6 +10,8 @@ body,
 
 body {
     background: #f6f6f6;
+    font-size: rem(24);
+    color: #666;
 
     img {
         width: 100%;
@@ -26,6 +28,10 @@ body {
         background: none;
         text-decoration: none;
     }
+}
+
+.ml20 {
+    margin-left: rem(20);
 }
 
 /* webkit滚动条样式 */

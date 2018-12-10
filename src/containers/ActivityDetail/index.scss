@@ -1,6 +1,8 @@
 @import "../../../libs/scss/rem";
 
 .detail-warp {
+    padding-bottom: rem(120);
+
     .top {
         background: #fff;
 
@@ -17,8 +19,8 @@
                 font-size: rem(32);
                 color: #333;
                 line-height: rem(32);
-                padding: rem(10);
-                margin-bottom: rem(10);
+                //padding: rem(10);
+                margin-bottom: rem(20);
             }
 
             & > div {
@@ -28,6 +30,7 @@
                 justify-content: space-between;
                 height: rem(40);
                 line-height: rem(40);
+                margin-bottom: rem(10);
 
                 .right {
                     color: #666;
@@ -41,6 +44,62 @@
                 .num {
                     color: #cc94ef;
                 }
+            }
+        }
+    }
+
+    .page-box {
+        margin-bottom: rem(24);
+
+        .page-box-item {
+            padding: rem(24);
+            line-height: rem(40);
+            background: #fff;
+            color: #505050;
+            font-size: rem(28);
+            border-bottom: 1px solid #e4e4e4;
+            display: flex;
+            align-items: center;
+
+            &:nth-last-of-type(1) {
+                border: none;
+            }
+
+            &.between {
+                justify-content: space-between;
+            }
+
+            & > div {
+                display: flex;
+            }
+
+            label {
+                font-size: 0;
+                color: #8c8c8c;
+                display: flex;
+                align-items: center;
+
+                i {
+                    margin-right: rem(20);
+                    font-size: rem(26);
+
+                    &.icon-time {
+                        font-size: rem(32);
+                    }
+
+                    &.icon-user {
+                        font-size: rem(28);
+                    }
+                }
+
+                span {
+                    font-size: rem(28);
+                    white-space: nowrap;
+                }
+            }
+
+            a {
+                color: #ff7f00;
             }
         }
     }

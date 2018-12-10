@@ -8,7 +8,7 @@
 const navData = [
     {key: 'home', label: '首页', path: '/', icon: 'icon-home'},
     {key: 'activity', label: '活动汇总', path: '/activity', icon: 'icon-activity'},
-    {key: 'leader', label: '领队招募', path: '/leader', icon: ''},
+    {key: 'leader', label: '领队招募', path: '/leader', icon: 'icon-recruit'},
     {key: 'user', label: '个人中心', path: '/user', icon: 'icon-user'}
 ]
 

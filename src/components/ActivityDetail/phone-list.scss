@@ -1,0 +1,60 @@
+/**
+ * Author：tantingting
+ * Time：2018/12/10
+ * Description：Description
+ */
+@import "../../../libs/scss/rem";
+
+.phone-list-warp {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 8;
+
+    &.hide {
+        display: none;
+    }
+
+    .mask {
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .phone-list {
+        position: absolute;
+        width: 100%;
+        bottom: rem(120);
+        background-color: #f2f2f2;
+
+        li {
+            margin-bottom: rem(24);
+            padding-left: rem(20);
+            background-color: #fff;
+
+            a {
+                font-size: rem(28);
+                line-height: rem(100);
+                color: #666;
+                display: flex;
+
+                i {
+                    font-size: rem(48);
+                    margin-right: rem(32);
+                }
+
+                .captain-tag {
+                    color: #ff7f00;
+                    display: inline-block;
+                    margin-left: rem(20);
+                    line-height: rem(32);
+                    border: 1px solid;
+                    font-size: rem(24);
+                    padding: 0 rem(5);
+                }
+            }
+        }
+    }
+}
+
