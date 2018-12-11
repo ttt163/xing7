@@ -6,6 +6,7 @@
 
 import React, {Component} from 'react'
 import './selectBox.scss'
+import {hashHistory} from 'react-router'
 
 const list = ['周三男士', '周三女士', '圣诞节', '12日-14日']
 
@@ -20,6 +21,10 @@ export default class SelectBox extends Component {
 
     setDate (key, val) {
         this.setState({[key]: val})
+    }
+
+    submit () {
+        hashHistory.push('/terms')
     }
 
     render () {
@@ -66,7 +71,7 @@ export default class SelectBox extends Component {
                             <p>{person}人</p>
                             <p>批次：{time}</p>
                         </div>
-                        <div className="btn">确定</div>
+                        <div className="btn" onClick={() => this.submit()}>确定</div>
                     </div>
                 </div>
             </div>

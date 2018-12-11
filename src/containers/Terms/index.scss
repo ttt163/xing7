@@ -1,0 +1,47 @@
+@import "../../../libs/scss/rem";
+
+.terms-warp {
+    padding: rem(24);
+    background-color: #fff;
+    color: #333;
+
+    & > h1 {
+        margin-bottom: rem(20);
+        text-align: center;
+        font-size: rem(32);
+    }
+
+    .terms-detail {
+        font-size: rem(28);
+        line-height: rem(42);
+        padding-bottom: rem(120);
+
+        .rich-text {
+            white-space: pre-wrap;
+            text-align: justify;
+        }
+    }
+
+    .footer {
+        background-color: #fff;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: rem(128);
+        border-top: 1px solid #e5e5e5;
+
+        a {
+            display: block;
+            font-size: rem(32);
+            height: rem(80);
+            width: rem(700);
+            line-height: rem(80);
+            text-align: center;
+            margin: rem(24) auto;
+            color: #fff;
+            background-color: #ff7f00;
+            border-radius: rem(8);
+        }
+    }
+}

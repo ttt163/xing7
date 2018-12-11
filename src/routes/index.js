@@ -27,6 +27,36 @@ const rootRoutes = <div>
                 callback(null, require('../containers/ActivityDetail').default)
             }, 'ActivityDetail')
         }}/>
+        <Route path='/terms' getComponent={(nextState, callback) => {
+            require.ensure([], (require) => {
+                callback(null, require('../containers/Terms').default)
+            }, 'Terms')
+        }}/>
+        <Route path='/apply' getComponent={(nextState, callback) => {
+            require.ensure([], (require) => {
+                callback(null, require('../containers/ActivityApply').default)
+            }, 'ActivityApply')
+        }}/>
+        <Route path='/user' getComponent={(nextState, callback) => {
+            require.ensure([], (require) => {
+                callback(null, require('../containers/User').default)
+            }, 'Terms')
+        }}/>
+        <Route path='/user-apply' getComponent={(nextState, callback) => {
+            require.ensure([], (require) => {
+                callback(null, require('../containers/UserApply').default)
+            }, 'UserApply')
+        }}/>
+        <Route path='/user-message' getComponent={(nextState, callback) => {
+            require.ensure([], (require) => {
+                callback(null, require('../containers/UserMessage').default)
+            }, 'UserMessage')
+        }}/>
+        <Route path='/order-detail' getComponent={(nextState, callback) => {
+            require.ensure([], (require) => {
+                callback(null, require('../containers/OrderDetail').default)
+            }, 'OrderDetail')
+        }}/>
     </Route>
 </div>
 
