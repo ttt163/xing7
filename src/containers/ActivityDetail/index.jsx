@@ -5,6 +5,7 @@ import {setPageTitle} from '../../actions/public'
 import DetailFooter from '../../components/ActivityDetail/footer'
 import PhoneList from '../../components/ActivityDetail/phone-list'
 import SelectBox from '../../components/ActivityDetail/selectBox'
+import ActivityRecommend from '../../components/ActivityRecommend'
 
 class ActivityDetail extends Component {
     constructor () {
@@ -29,6 +30,10 @@ class ActivityDetail extends Component {
         this.setState({
             showSelectBox: true
         })
+    }
+    createMarkup () {
+        let _str = '<div data-contents=""><div data-block="true" data-editor="eqrjo" data-offset-key="1tgjc-0-0"><div data-offset-key="1tgjc-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="1tgjc-0-0" style="font-weight: bold; color: rgb(255, 0, 0);"><span data-text="true">dssdafdasfdasd</span></span></div></div><div data-block="true" data-editor="eqrjo" data-offset-key="ehpkh-0-0"><div data-offset-key="ehpkh-0-0" class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"><span data-offset-key="ehpkh-0-0" style="font-weight: bold; color: rgb(255, 127, 0); font-style: italic;"><span data-text="true">safafafaf</span></span></div></div></div>'
+        return {__html: _str}
     }
     render () {
         const {showPhoneList, showSelectBox} = this.state
@@ -88,12 +93,21 @@ class ActivityDetail extends Component {
                     </a>
                 </div>
             </div>
-            <div className='page-box'>
+            {/* <div className='page-box'>
                 <div className='page-box-item between'>
                     <label><span>咨询留言</span></label>
                     <i className='iconfont icon-right'></i>
                 </div>
+            </div> */}
+            {/* 详细信息 */}
+            <div className="activity-info">
+                <h3 className="info-title">详细信息</h3>
+                <div className="desc">
+                    <div dangerouslySetInnerHTML={this.createMarkup()}/>
+                </div>
             </div>
+            {/* 相关推荐 */}
+            <ActivityRecommend />
             {/* 选择批次 */}
             <SelectBox isShow={showSelectBox} hideBox={() => this.setState({showSelectBox: false})} />
             {/* 底部 */}

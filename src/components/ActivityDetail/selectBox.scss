@@ -93,7 +93,7 @@
                     &.selected {
                         background-color: #ff7f00;
                         color: #fff;
-                        border: none;
+                        border-color: #ff7f00;
                     }
                 }
             }
@@ -119,8 +119,10 @@
                     }
 
                     span {
-                        margin: 0 rem(40);
+                        //margin: 0 rem(40);
                         font-size: rem(32);
+                        width: rem(122);
+                        text-align: center;
                     }
                 }
             }

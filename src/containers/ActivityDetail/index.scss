@@ -103,4 +103,21 @@
             }
         }
     }
+
+    .activity-info {
+        background: #fff;
+
+        .info-title {
+            height: rem(80);
+            line-height: rem(80);
+            border-bottom: 1px solid #e4e4e4;
+            font-size: rem(28);
+            color: #333;
+            text-align: center;
+        }
+
+        .desc {
+            padding: rem(24);
+        }
+    }
 }

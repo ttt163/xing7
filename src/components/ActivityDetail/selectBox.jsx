@@ -7,9 +7,24 @@
 import React, {Component} from 'react'
 import './selectBox.scss'
 
+const list = ['周三男士', '周三女士', '圣诞节', '12日-14日']
+
 export default class SelectBox extends Component {
+    constructor (props) {
+        super(props)
+        this.state = {
+            time: !props.time ? list[2] : props.time,
+            person: !props.person ? 1 : props.person
+        }
+    }
+
+    setDate (key, val) {
+        this.setState({[key]: val})
+    }
+
     render () {
         const {isShow, hideBox} = this.props
+        const {time, person} = this.state
         return (
             <div className="select-box-warp" style={{display: !isShow ? 'none' : 'block'}}>
                 <div className="mask" onClick={() => hideBox()}></div>
@@ -27,13 +42,11 @@ export default class SelectBox extends Component {
                         <div className='select-item'>
                             <label>选择批次：</label>
                             <ul className="clearfix">
-                                <li className="selected">周三男士</li>
-                                <li>周三女士</li>
-                                <li>圣诞节</li>
-                                <li>12日-14日</li>
-                                <li>12日-14日</li>
-                                <li>12日-14日</li>
-                                <li>12日-14日</li>
+                                {
+                                    list.map((item, index) => (
+                                        <li key={index} className={item === time ? 'selected' : ''} onClick={() => this.setDate('time', item)}>{item}</li>
+                                    ))
+                                }
                             </ul>
                         </div>
                         <div className="select-item">
@@ -41,17 +54,17 @@ export default class SelectBox extends Component {
                             <div className="select-person">
                                 <p>¥&nbsp;750/人</p>
                                 <div className="action-box">
-                                    <i className="iconfont icon-reduce"></i>
-                                    <span>1</span>
-                                    <i className="iconfont icon-add"></i>
+                                    <i className="iconfont icon-reduce" onClick={() => this.setDate('person', person - 1 < 1 ? 1 : person - 1)}></i>
+                                    <span>{person}</span>
+                                    <i className="iconfont icon-add" onClick={() => this.setDate('person', person + 1 > 10 ? 10 : person + 1)}></i>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="footer">
                         <div className="left">
-                            <p>1人</p>
-                            <p>批次：周三男士</p>
+                            <p>{person}人</p>
+                            <p>批次：{time}</p>
                         </div>
                         <div className="btn">确定</div>
                     </div>
