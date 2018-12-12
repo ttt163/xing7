@@ -15,6 +15,8 @@
     color: #fff;
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 99;
 
     .page-title {
         flex: 1;

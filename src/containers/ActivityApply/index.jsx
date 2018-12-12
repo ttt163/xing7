@@ -6,6 +6,13 @@ import ApplyAdd from '../../components/ApplyAdd'
 import {Link, hashHistory} from 'react-router'
 
 class ActivityApply extends Component {
+    constructor () {
+        super()
+        this.state = {
+            showPrice: false
+        }
+    }
+
     componentWillMount () {
         const {dispatch} = this.props
         dispatch(setPageTitle('活动报名'))
@@ -14,6 +21,7 @@ class ActivityApply extends Component {
         hashHistory.push('/order-detail')
     }
     render () {
+        const {showPrice} = this.state
         return <div className="apply-warp">
             <div className="top">
                 <h1>蹦床交友派对蹦床交友派对——出大招！放福利！蹦床交友派对——出大招！放福利！——出大招！放福利！</h1>
@@ -46,6 +54,7 @@ class ActivityApply extends Component {
             {/* 报名 */}
             <div className="apply-info">
                 <div className="add-list">
+                    <ApplyAdd />
                     <ApplyAdd />
                 </div>
                 <div className="btns">
@@ -98,9 +107,26 @@ class ActivityApply extends Component {
             <div className="apply-footer">
                 <div>
                     <label>总金额：¥119</label>
-                    <i className="iconfont icon-up"></i>
+                    <i className={!showPrice ? 'iconfont icon-down' : 'iconfont icon-up'} onClick={() => this.setState({showPrice: !showPrice})}></i>
                 </div>
-                <a href="javascript:void(0)" onClick={() => this.submit()}>立即报名</a>
+                <a className="btn" href="javascript:void(0)" onClick={() => this.submit()}>立即报名</a>
+            </div>
+            {/*  价格说明 */}
+            <div className="price-desc" style={{display: !showPrice ? 'none' : 'block'}}>
+                <div className="mask" onClick={() => this.setState({showPrice: false})}></div>
+                <div className="price-content">
+                    <h6>价格详情</h6>
+                    <div className="info">
+                        <div>
+                            <label>订单金额</label>
+                            <span>238 X 1 = ￥238.00</span>
+                        </div>
+                        <div>
+                            <label>实付总额</label>
+                            <span>￥238</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     }

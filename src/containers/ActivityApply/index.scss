@@ -76,7 +76,7 @@ $color: #ff7f00;
     }
 
     .apply-info {
-        background: #fff;
+        //background: #fff;
 
         .btns {
             padding: rem(20);
@@ -213,11 +213,83 @@ $color: #ff7f00;
 
     .apply-footer {
         position: fixed;
-        padding: rem(20) rem(24);
+        z-index: 9;
         bottom: 0;
         width: 100%;
         background: #fff;
         border-top: 1px solid #e4e4e4;
-        height: rem(80);
+        display: flex;
+        justify-content: space-between;
+
+        & > div {
+            display: flex;
+            margin-left: rem(24);
+            line-height: rem(120);
+            font-size: rem(28);
+
+            i {
+                font-size: rem(36);
+                color: #999;
+            }
+
+            label {
+                color: $color;
+                margin-right: rem(10);
+            }
+        }
+
+        .btn {
+            display: block;
+            width: rem(320);
+            height: rem(120);
+            line-height: rem(120);
+            text-align: center;
+            color: #fff;
+            background-color: $color;
+            font-size: rem(32);
+        }
+    }
+
+    .price-desc {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        bottom: 0;
+        z-index: 8;
+
+        .mask {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .price-content {
+            position: absolute;
+            bottom: rem(120);
+            background-color: #fff;
+            width: 100%;
+            color: #505050;
+            font-size: rem(28);
+
+            .info {
+                padding: 0 rem(24);
+
+                & > div {
+                    line-height: rem(60);
+                    height: rem(60);
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+
+            h6 {
+                height: rem(80);
+                line-height: rem(80);
+                border-bottom: 1px solid #e4e4e4;
+                box-sizing: border-box;
+                padding-left: rem(20);
+                font-size: rem(32);
+            }
+        }
     }
 }

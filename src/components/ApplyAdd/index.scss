@@ -6,6 +6,11 @@
 @import "../../../libs/scss/rem";
 
 .add-warp {
+    border-radius: rem(10);
+    box-shadow: 0 rem(2) rem(4) rgba(0, 0, 0, 0.35);
+    margin-bottom: rem(20);
+    background-color: #fff;
+
     & > div {
         height: rem(85);
         box-sizing: border-box;

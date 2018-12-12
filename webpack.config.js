@@ -87,8 +87,8 @@ module.exports = {
         hot: true,
         historyApiFallback: true,
         contentBase: ROOT_PATH,
-        host: '10.236.78.220',
-        // host: '192.168.31.101',
+        // host: '10.236.78.220',
+        host: '192.168.31.101',
         // host: '127.0.0.1',
         port: '3002',
         proxy: [{
