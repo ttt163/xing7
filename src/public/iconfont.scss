@@ -7,12 +7,12 @@
 
 @font-face {
     font-family: 'iconfont';  /* project id 899224 */
-    src: url('//at.alicdn.com/t/font_899224_obyp37pu89.eot');
+    src: url('//at.alicdn.com/t/font_899224_375ntl2ohb3.eot');
     src:
-        url('//at.alicdn.com/t/font_899224_obyp37pu89.eot?#iefix') format('embedded-opentype'),
-        url('//at.alicdn.com/t/font_899224_obyp37pu89.woff') format('woff'),
-        url('//at.alicdn.com/t/font_899224_obyp37pu89.ttf') format('truetype'),
-        url('//at.alicdn.com/t/font_899224_obyp37pu89.svg#iconfont') format('svg');
+        url('//at.alicdn.com/t/font_899224_375ntl2ohb3.eot?#iefix') format('embedded-opentype'),
+        url('//at.alicdn.com/t/font_899224_375ntl2ohb3.woff') format('woff'),
+        url('//at.alicdn.com/t/font_899224_375ntl2ohb3.ttf') format('truetype'),
+        url('//at.alicdn.com/t/font_899224_375ntl2ohb3.svg#iconfont') format('svg');
 }
 
 .iconfont {
@@ -77,4 +77,32 @@
 
 .icon-reduce:before {
     content: '\e627';
+}
+
+.icon-add2:before {
+    content: '\e644';
+}
+
+.icon-del:before {
+    content: '\e6ac';
+}
+
+.icon-wenhao:before {
+    content: '\e72d';
+}
+
+.icon-down:before {
+    content: '\e65e';
+}
+
+.icon-up:before {
+    content: '\e64f';
+}
+
+.icon-import:before {
+    content: '\e639';
+}
+
+.icon-selected:before {
+    content: '\e640';
 }

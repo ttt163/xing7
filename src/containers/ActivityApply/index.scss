@@ -1,6 +1,223 @@
 @import "../../../libs/scss/rem";
 
-body {
-    background: #fff;
-    font-size: rem(24);
+$color: #ff7f00;
+
+.apply-warp {
+    padding-bottom: rem(100);
+
+    .top {
+        background: #fff;
+        padding-bottom: rem(10);
+
+        h1 {
+            font-size: rem(32);
+            line-height: rem(42);
+            color: #333;
+            padding: rem(24);
+            border-bottom: 1px solid #e4e4e4;
+            margin-bottom: rem(10);
+        }
+
+        & > div {
+            line-height: rem(46);
+            font-size: rem(28);
+            color: #646464;
+            display: flex;
+            padding: 0 rem(24);
+
+            label {
+                width: rem(146);
+            }
+
+            .price {
+                color: #ff7f00;
+            }
+        }
+    }
+
+    .apply-legend {
+        padding: 0 rem(24);
+        margin-bottom: rem(20);
+
+        .title-h4 {
+            height: rem(82);
+            width: rem(675);
+            position: relative;
+            margin: 0 auto;
+
+            h4 {
+                font-size: rem(32);
+                position: absolute;
+                top: rem((82 - 32) / 2);
+                z-index: 1;
+                background-color: #f9f9f9;
+                padding: 0 rem(40);
+                left: 50%;
+                transform: translateX(-50%);
+                color: #333;
+            }
+
+            .line {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background: #d9d9d9;
+            }
+        }
+
+        p {
+            padding: 0 rem(20);
+            color: #999;
+            font-size: rem(28);
+            line-height: rem(42);
+        }
+    }
+
+    .apply-info {
+        background: #fff;
+
+        .btns {
+            padding: rem(20);
+            display: flex;
+            justify-content: center;
+            align-content: center;
+
+            a {
+                display: block;
+                //width: rem(190);
+                padding: 0 rem(14);
+                height: rem(60);
+                line-height: rem(60);
+                color: #ff7f00;
+                border: 1px solid;
+                border-radius: rem(6);
+                text-align: center;
+
+                &:nth-of-type(1) {
+                    margin-right: rem(20);
+                }
+
+                i {
+                    font-size: rem(28);
+                    //font-weight: bold;
+                    margin-right: rem(5);
+                }
+            }
+        }
+    }
+
+    .remark {
+        padding: rem(20) rem(24);
+        height: rem(56);
+        margin: rem(20) 0;
+        display: flex;
+        align-items: center;
+        background: #fff;
+
+        label {
+            width: rem(146);
+        }
+
+        input {
+            border: 0;
+            outline: 0;
+            flex: 1;
+            line-height: rem(56);
+        }
+    }
+
+    .pay-box {
+        background: #fff;
+
+        h4 {
+            padding: rem(14) rem(24);
+            line-height: rem(56);
+            font-size: rem(28);
+            border-bottom: 1px solid #e4e4e4;
+            color: #333;
+        }
+
+        .pay-ways {
+            padding: 0 rem(24);
+
+            & > div {
+                display: flex;
+
+                & > i {
+                    width: rem(74);
+                    height: rem(74);
+                    margin-right: rem(30);
+                    margin-top: rem(28);
+
+                    &.zfb-img {
+                        background: url("../../public/img/icon-zhifubao.png") no-repeat;
+                        background-size: contain;
+                    }
+
+                    &.wx-img {
+                        background: url("../../public/img/icon-weixin.png") no-repeat;
+                        background-size: contain;
+                    }
+                }
+
+                & > div {
+                    display: flex;
+                    justify-content: space-between;
+                    flex: 1;
+                    font-size: rem(26);
+                    color: #999;
+                    line-height: rem(30);
+                    padding: rem(28) 0;
+                    border-bottom: 1px solid #e4e4e4;
+                    align-items: center;
+
+                    &.no-border {
+                        border: none;
+                    }
+
+                    h5 {
+                        font-size: rem(30);
+                        color: #333;
+                        line-height: rem(38);
+                    }
+
+                    .icon-selected {
+                        font-size: rem(42);
+                    }
+                }
+
+                .icon-selected {
+                    color: $color;
+                }
+            }
+        }
+    }
+
+    .check-terms {
+        margin: rem(18) 0;
+        padding: rem(24);
+        display: flex;
+        font-size: rem(28);
+        align-items: center;
+
+        label {
+            margin: 0 rem(5);
+        }
+
+        a {
+            color: $color;
+        }
+    }
+
+    .apply-footer {
+        position: fixed;
+        padding: rem(20) rem(24);
+        bottom: 0;
+        width: 100%;
+        background: #fff;
+        border-top: 1px solid #e4e4e4;
+        height: rem(80);
+    }
 }

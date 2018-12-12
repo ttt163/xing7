@@ -30,8 +30,18 @@ body {
     }
 }
 
+.need-fill {
+    color: red !important;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .ml20 {
     margin-left: rem(20);
+}
+
+input::-webkit-input-placeholder {
+    color: #d1cece;
 }
 
 /* webkit滚动条样式 */

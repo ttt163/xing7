@@ -3,12 +3,12 @@
 .terms-warp {
     padding: rem(24);
     background-color: #fff;
-    color: #333;
 
     & > h1 {
         margin-bottom: rem(20);
         text-align: center;
         font-size: rem(32);
+        color: #333;
     }
 
     .terms-detail {
