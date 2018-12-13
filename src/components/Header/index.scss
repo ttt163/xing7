@@ -18,6 +18,14 @@
     position: relative;
     z-index: 99;
 
+    &.user-header {
+        background: transparent;
+        justify-content: space-between;
+        box-shadow: none;
+        position: fixed;
+        top: 0;
+    }
+
     .page-title {
         flex: 1;
     }

@@ -5,20 +5,17 @@
  */
 
 import React, {Component} from 'react'
-import {Link} from 'react-router'
+import {Link, hashHistory} from 'react-router'
 import './index.scss'
 
 export default class Header extends Component {
-    componentDidMount () {
-        console.log(this.props)
-    }
     goBack () {
-        history.back()
+        hashHistory.goBack()
     }
     render () {
         const {pageTitle, showNav, path} = this.props
         return (
-            <div className='header-warp'>
+            <div className={path === '/user' ? 'header-warp user-header' : 'header-warp'}>
                 {path === '/' ? (
                     <Link to='/user'>
                         <i className='iconfont icon-user'></i>
@@ -28,7 +25,7 @@ export default class Header extends Component {
                         <i className='iconfont icon-back'></i>
                     </a>
                 )}
-                <h3 className='page-title'>{pageTitle}</h3>
+                {path === '/user' ? '' : <h3 className='page-title'>{pageTitle}</h3>}
                 <a href="javascript:void(0)" className='h-nav' onClick={() => showNav()}>
                     <i className='iconfont icon-nav'></i>
                 </a>

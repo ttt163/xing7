@@ -1,6 +1,89 @@
 @import "../../../libs/scss/rem";
+@import "../../../libs/scss/theme";
 
-body {
-    background: #fff;
-    font-size: rem(24);
+.user-warp {
+    position: relative;
+    min-height: 100%;
+
+    .top {
+        width: 100%;
+        margin-bottom: rem(20);
+        height: rem(400);
+        background: url("../../public/img/avatar_bg.jpg") no-repeat;
+        background-size: cover;
+        box-sizing: border-box;
+        padding-top: rem(70);
+        text-align: center;
+        color: #fff;
+
+        .user-img {
+            background-color: #ccc;
+            overflow: hidden;
+            border-radius: 50%;
+            width: rem(138);
+            height: rem(138);
+            padding: rem(6);
+            margin: 0 auto;
+
+            img {
+                width: 100%;
+                border-radius: 50%;
+            }
+        }
+
+        a {
+            font-size: rem(25);
+            text-decoration: underline;
+            line-height: rem(40);
+            color: #fff;
+        }
+
+        h3 {
+            font-size: rem(28);
+            line-height: rem(40);
+            margin: rem(24);
+        }
+    }
+
+    .user-content {
+        background: #fff;
+
+        & > a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: rem(0) rem(24);
+            height: rem(98);
+            border-bottom: 1px solid $borderColor;
+            color: #505050;
+            font-size: rem(30);
+
+            & > div {
+                display: flex;
+                align-items: center;
+
+                i {
+                    font-size: rem(36);
+                    margin-right: rem(20);
+                    color: $color;
+                }
+            }
+        }
+    }
+
+    .exit {
+        display: block;
+        width: rem(710);
+        height: rem(80);
+        line-height: rem(80);
+        font-size: rem(32);
+        color: #fff;
+        background: $color;
+        text-align: center;
+        border-radius: rem(6);
+        position: absolute;
+        bottom: rem(100);
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
