@@ -92,9 +92,9 @@ module.exports = {
         // host: '127.0.0.1',
         port: '3002',
         proxy: [{
-            context: ['/*'],
+            context: ['/*', '/*/*'],
             // target: 'http://test.lk.8864.com',
-            target: 'http://wechatstore.linekong.com',
+            target: 'http://188.131.179.44:8080',
             changeOrigin: true,
             ws: true,
             secure: false

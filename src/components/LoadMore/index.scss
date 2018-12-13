@@ -1,0 +1,31 @@
+/**
+ * Author：tantingting
+ * Time：2018/11/5
+ * Description：Description
+ */
+@import "../../../libs/scss/rem";
+
+.loading-more {
+    padding: 20px 0;
+
+    .no-more {
+        width: rem(600);
+        margin: 0 auto;
+    }
+
+    .has-more {
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: rem(35);
+            height: rem(32);
+        }
+
+        span {
+            color: #c6c6c6;
+            font-size: rem(20);
+            margin-left: rem(30);
+        }
+    }
+}

@@ -3,7 +3,7 @@ import './index.scss'
 import {setPageTitle} from '../../actions/public'
 import {connect} from 'react-redux'
 import ActivityItem from '../../components/ActivityListItem'
-import loadingImg from '../../public/img/loding.gif'
+import LoadMore from '../../components/LoadMore'
 
 class Activity extends Component {
     componentWillMount () {
@@ -22,10 +22,8 @@ class Activity extends Component {
                 <ActivityItem />
                 <ActivityItem />
             </div>
-            <div className="loading-more clearfix">
-                <img src={loadingImg} />
-                <span>正在加载中...</span>
-            </div>
+            {/* 加载更多 */}
+            <LoadMore />
         </div>
     }
 }
