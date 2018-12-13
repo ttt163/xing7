@@ -10,6 +10,7 @@
     box-shadow: 0 rem(2) rem(4) rgba(0, 0, 0, 0.35);
     margin-bottom: rem(20);
     background-color: #fff;
+    padding: 0 rem(24);
 
     & > div {
         height: rem(85);
@@ -18,8 +19,12 @@
         display: flex;
         font-size: rem(26);
         align-items: center;
-        padding: rem(14) rem(24);
         line-height: rem(65);
+        padding: rem(14) 0;
+
+        &:nth-last-of-type(1) {
+            border: none;
+        }
 
         label {
             width: rem(146);
@@ -46,17 +51,27 @@
         flex: 1;
         display: flex;
         justify-content: space-between;
+        position: relative;
 
         select {
             outline: none;
-            //flex: 1;
-            width: rem(480);
+            flex: 1;
+            //width: rem(480);
             height: 100%;
             border: none;
             background: transparent;
             text-overflow: ellipsis;
             overflow: hidden;
             white-space: nowrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        i {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
         }
     }
 
