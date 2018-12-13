@@ -4,6 +4,7 @@ import {setPageTitle} from '../../actions/public'
 import {connect} from 'react-redux'
 import ApplyAdd from '../../components/ApplyAdd'
 import {Link, hashHistory} from 'react-router'
+import {addPerson, delPerson, editPerson} from '../../actions/apply'
 
 class ActivityApply extends Component {
     constructor () {
@@ -17,11 +18,19 @@ class ActivityApply extends Component {
         const {dispatch} = this.props
         dispatch(setPageTitle('活动报名'))
     }
+
+    componentDidMount () {
+        const {dispatch} = this.props
+        dispatch(addPerson())
+    }
+
     submit () {
         hashHistory.push('/order-detail')
     }
     render () {
         const {showPrice} = this.state
+        const {applyInfo, dispatch} = this.props
+        const {persons} = applyInfo
         return <div className="apply-warp">
             <div className="top">
                 <h1>蹦床交友派对蹦床交友派对——出大招！放福利！蹦床交友派对——出大招！放福利！——出大招！放福利！</h1>
@@ -54,11 +63,14 @@ class ActivityApply extends Component {
             {/* 报名 */}
             <div className="apply-info">
                 <div className="add-list">
-                    <ApplyAdd />
-                    <ApplyAdd />
+                    {
+                        persons.map((item, index) => (
+                            <ApplyAdd key={index} item={item} index={index} del={(index) => dispatch(delPerson(index))} edit={(obj, index) => dispatch(editPerson(obj, index))} />
+                        ))
+                    }
                 </div>
                 <div className="btns">
-                    <a href="javascript:void(0)">
+                    <a href="javascript:void(0)" onClick={() => dispatch(addPerson())}>
                         <i className="iconfont icon-add2"></i>
                         <span>新增报名人员</span>
                     </a>
@@ -135,7 +147,7 @@ class ActivityApply extends Component {
 const mapStateToProps = (state) => {
     // console.log(state)
     return {
-        publicInfo: state.publicInfo
+        applyInfo: state.applyInfo
     }
 }
 
