@@ -51,6 +51,7 @@ module.exports = {
                 include: ROOT_PATH,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
+                    publicPath: '../',
                     use: [
                         'css-loader',
                         {
@@ -96,7 +97,7 @@ module.exports = {
                     // 最紧凑的输出
                     beautify: false,
                     // 删除所有的注释
-                    comments: false,
+                    comments: false
                 }
             }
         }),
