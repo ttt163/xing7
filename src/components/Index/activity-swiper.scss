@@ -1,0 +1,36 @@
+/**
+ * Author：tantingting
+ * Time：2018/11/5
+ * Description：Description
+ */
+@import "../../../libs/scss/rem";
+
+.activity-swiper-warp {
+    .swiper-slide {
+        display: block;
+        //border-radius: rem(15);
+        overflow: hidden;
+        height: rem(263);
+    }
+
+    /* width: 100%;
+    height: rem(262);
+    //margin-top: rem(24);
+
+    .swiper-container {
+        height: 100%;
+
+        .swiper-slide {
+            width: rem(680);
+            height: 100%;
+            margin: 0 auto;
+            //border-radius: rem(15);
+            //overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    } */
+}

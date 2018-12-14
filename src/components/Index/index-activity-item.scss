@@ -1,0 +1,51 @@
+/**
+ * Author：tantingting
+ * Time：2018/12/14
+ * Description：Description
+ */
+@import "../../../libs/scss/rem";
+@import "../../../libs/scss/theme";
+
+.index-activity-item {
+    display: flex;
+    padding-bottom: rem(20);
+
+    & > img {
+        width: rem(300);
+        height: rem(200);
+        margin-right: rem(35);
+    }
+
+    & > div {
+        flex: 1;
+    }
+
+    h3 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        font-size: rem(30);
+        margin-bottom: rem(20);
+        color: #333;
+        line-height: rem(42);
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        height: rem(50);
+        line-height: rem(50);
+        background: $color;
+        color: #fff;
+        border-radius: rem(6);
+        font-size: rem(24);
+    }
+
+    p {
+        margin-top: rem(13);
+        color: #666;
+        font-size: rem(24);
+    }
+}

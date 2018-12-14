@@ -1,1 +1,110 @@
 @import "../../../libs/scss/rem";
+
+.index-warp {
+    .activity-recommend {
+        background: #fff;
+        padding: 0 rem(24);
+        margin-bottom: rem(20);
+    }
+
+    .activity-exclusive {
+        background: #fff;
+        margin-bottom: rem(20);
+        padding-bottom: rem(10);
+        //padding: rem(20) rem(24);
+
+        .x-scroll {
+            width: 100%;
+            overflow-x: auto;
+            padding-left: rem(24);
+            box-sizing: border-box;
+            -webkit-overflow-scrolling: touch;
+
+            &::-webkit-scrollbar {
+                width: 0;
+                height: 0;
+                color: transparent;
+            }
+
+            .list {
+                display: flex;
+                flex-wrap: nowrap;
+
+                .activity-item {
+                    width: rem(300);
+                    min-width: rem(300);
+                    margin-right: rem(20);
+
+                    .info {
+                        .item-title {
+                            font-size: rem(26);
+                            line-height: rem(32);
+                        }
+
+                        .item-price {
+                            font-size: rem(24);
+                            margin-top: rem(10);
+
+                            .icon-vip {
+                                font-size: rem(26);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .recommend-label {
+            padding-left: rem(24);
+            padding-right: rem(24);
+        }
+    }
+
+    .activity-indoor {
+        background: #fff;
+        padding: 0 rem(24);
+        margin-bottom: rem(20);
+        padding-bottom: rem(10);
+
+        .activity-item {
+            width: rem(346);
+
+            .info {
+                .item-title {
+                    font-size: rem(28);
+                }
+
+                .item-price {
+                    margin-top: rem(10);
+                }
+            }
+        }
+    }
+
+    .recommend-label {
+        display: flex;
+        justify-content: space-between;
+        height: rem(40);
+        padding: rem(30) 0;
+
+        & > div {
+            display: flex;
+        }
+
+        img {
+            width: rem(40);
+            height: rem(40);
+            margin-right: rem(10);
+        }
+
+        h2 {
+            font-size: rem(32);
+        }
+
+        a {
+            float: right;
+            font-size: rem(24);
+            color: #999;
+        }
+    }
+}
