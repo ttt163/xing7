@@ -8,6 +8,7 @@
 
 .order-item {
     background: #fff;
+    margin-bottom: rem(20);
 
     .top {
         padding: 0 rem(24);
@@ -16,6 +17,10 @@
         align-items: center;
         height: rem(60);
         border-bottom: 1px solid $borderColor;
+
+        h3 {
+            font-size: rem(24);
+        }
     }
 
     .contain {
@@ -36,7 +41,7 @@
 
             h3 {
                 //height: rem(80);
-                margin-bottom: rem(6);
+                padding: rem(6) 0;
                 font-size: rem(26);
                 max-height: rem(80);
                 color: #505050;
@@ -55,6 +60,22 @@
             .price {
                 font-size: rem(30);
             }
+        }
+    }
+
+    .btns {
+        padding: rem(20) rem(24);
+        border-top: 1px solid $borderColor;
+
+        .btn-del {
+            float: right;
+            box-sizing: border-box;
+            height: rem(54);
+            line-height: rem(54);
+            border: 1px solid #666;
+            color: #666;
+            padding: 0 rem(18);
+            border-radius: rem(6);
         }
     }
 }

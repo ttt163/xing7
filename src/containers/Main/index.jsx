@@ -38,7 +38,7 @@ class Main extends Component {
                     {this.props.children}
                 </div>
                 {
-                    /(^\/$)|(^\/activity$)/.test(location.pathname) ? <Footer/> : ''
+                    /(^\/$)|(^\/activity$)|(^\/user-apply$)|(^\/user-message$)/.test(location.pathname) ? <Footer/> : ''
                 }
             </div>
             <HeaderNav isShow={navIsShow} hideNav={() => this.hideNav()} />

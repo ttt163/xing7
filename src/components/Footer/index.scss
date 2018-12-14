@@ -4,9 +4,11 @@
  * Description：Description
  */
 @import "../../../libs/scss/rem";
+@import "../../../libs/scss/theme";
 
 .footer-warp {
-    background-color: #f9f9f9;
+    background-color: #fff;
+    border-top: 1px solid $borderColor;
     height: rem(98);
     display: flex;
     justify-content: space-around;

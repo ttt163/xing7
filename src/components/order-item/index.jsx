@@ -18,7 +18,7 @@ export default class OrderItem extends Component {
                 <div className="contain">
                     <img src="http://img.saihuitong.com/5426/img/3626466/1667cd0eec9.jpg-cw480h320" />
                     <div className="info">
-                        <h3>蹦床交友派对——出大招！放福利！</h3>
+                        <h3>蹦床交友派对——出大招！放福利！蹦床交友派对——出大招！放福利蹦床交友派对——出大招！放福利</h3>
                         <p>选择批次：周六</p>
                         <div>
                             <p>数量：2人</p>
@@ -26,7 +26,7 @@ export default class OrderItem extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="btns">
+                <div className="btns clearfix">
                     <div className="btn-del">删除订单</div>
                 </div>
             </div>
