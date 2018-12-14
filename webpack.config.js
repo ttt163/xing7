@@ -91,13 +91,13 @@ module.exports = {
         // host: '192.168.31.101',
         // host: '127.0.0.1',
         port: '3002',
-        proxy: [{
-            context: ['/*', '/*/*'],
+        proxy: {'/api': {
+            context: ['/*', '/*/*', '/*/*/*'],
             // target: 'http://test.lk.8864.com',
             target: 'http://188.131.179.44:8080',
             changeOrigin: true,
             ws: true,
             secure: false
-        }]
+        }}
     }
 }

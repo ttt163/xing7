@@ -1,1 +1,8 @@
 @import "../../../libs/scss/rem";
+
+.user-message-warp {
+    .user-apply-warp {
+        height: 100%;
+        overflow: auto;
+    }
+}

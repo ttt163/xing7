@@ -1,0 +1,29 @@
+/**
+ * Author：tantingting
+ * Time：2018/11/5
+ * Description：Description
+ */
+@import "../../../libs/scss/rem";
+@import "../../../libs/scss/theme";
+
+.message-item {
+    //background: #fff;
+    //margin-bottom: rem(20);
+    display: flex;
+    padding: rem(20) rem(24);
+    border-bottom: 1px solid $borderColor;
+    font-size: rem(24);
+    line-height: rem(40);
+
+    .user-img {
+        width: rem(100);
+        height: rem(100);
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: rem(30);
+    }
+
+    .time {
+        font-size: rem(20);
+    }
+}

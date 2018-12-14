@@ -3,7 +3,7 @@ import './index.scss'
 import {setPageTitle} from '../../actions/public'
 import {connect} from 'react-redux'
 import LoadMore from '../../components/LoadMore'
-import OrderItem from '../../components/order-item'
+import OrderItem from '../../components/OrderItem'
 
 class Terms extends Component {
     componentWillMount () {
@@ -12,7 +12,6 @@ class Terms extends Component {
     }
 
     loadingMore (e) {
-        console.log('11')
         if ($('.loading-more').offset().top - $(e.target).offset().top < $(e.target).height()) {
             console.log('加载更多')
         }
