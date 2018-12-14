@@ -36,6 +36,9 @@ class Activity extends Component {
                 <ActivityItem />
                 <ActivityItem />
                 <ActivityItem />
+                <ActivityItem />
+                <ActivityItem />
+                <ActivityItem />
             </div>
             {/* 加载更多 */}
             <LoadMore />

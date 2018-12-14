@@ -127,6 +127,28 @@ class Index extends Component {
                     <ActivityItem pathName={location.pathname} />
                 </div>
             </div>
+            {/* 星七团建 */}
+            <div className="activity-recommend">
+                <div className="recommend-label">
+                    <div>
+                        <img src={xing7} />
+                        <h2 className="color">星七团建</h2>
+                    </div>
+                    <Link to="/activity">更多<i className="iconfont icon-right"></i></Link>
+                </div>
+                <div className='recommend-list'>
+                    <IndexActivityItem />
+                </div>
+            </div>
+            {/* 联系我们 */}
+            <div className="contact">
+                <h2>联系我们</h2>
+                <a href="tel:18745779017">
+                    <i className="iconfont icon-phone"></i>
+                    <label> 电话： </label>
+                    <p>18745779017<span> (小七)</span></p>
+                </a>
+            </div>
         </div>
     }
 }

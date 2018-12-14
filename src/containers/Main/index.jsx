@@ -34,7 +34,7 @@ class Main extends Component {
             <Title render={title}/>
             <div className="page-main">
                 <Header path={location.pathname} pageTitle={title} showNav={() => this.showNav()} />
-                <div className='page-main'>
+                <div className='page-contain'>
                     {this.props.children}
                 </div>
                 {

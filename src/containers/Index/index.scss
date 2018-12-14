@@ -1,4 +1,5 @@
 @import "../../../libs/scss/rem";
+@import "../../../libs/scss/theme";
 
 .index-warp {
     .activity-recommend {
@@ -105,6 +106,57 @@
             float: right;
             font-size: rem(24);
             color: #999;
+        }
+    }
+
+    .contact {
+        background-color: #fff;
+        margin-bottom: rem(30);
+
+        h2 {
+            font-size: rem(32);
+            color: #333;
+            padding: rem(30) rem(24);
+            border-bottom: 1px solid $borderColor;
+        }
+
+        a {
+            padding: rem(30) rem(24);
+            display: flex;
+            align-items: center;
+            color: #666;
+
+            label {
+                font-size: rem(30);
+            }
+
+            i {
+                width: rem(48);
+                height: rem(48);
+                border-radius: 50%;
+                background: #eee;
+                position: relative;
+                margin-right: rem(10);
+
+                &:before {
+                    font-size: rem(28);
+                    position: absolute;
+                    top: rem(10);
+                    left: rem(10);
+                    color: #fff;
+                    //transform: translate3d(-50% -50%, 0);
+                }
+            }
+
+            p {
+                font-size: rem(32);
+                color: #333;
+
+                span {
+                    font-size: rem(24);
+                    color: #999;
+                }
+            }
         }
     }
 }
