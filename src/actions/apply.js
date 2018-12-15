@@ -6,6 +6,13 @@
 
 import {APPLY} from '../constants'
 
+export const initPerson = (obj) => {
+    return {
+        type: APPLY.APPLY_INIT_PERSON,
+        obj
+    }
+}
+
 export const addPerson = (obj) => {
     return {
         type: APPLY.APPLY_ADD_PERSON,

@@ -4,7 +4,7 @@ import {setPageTitle} from '../../actions/public'
 import {connect} from 'react-redux'
 import ApplyAdd from '../../components/ApplyAdd'
 import {Link, hashHistory} from 'react-router'
-import {addPerson, delPerson, editPerson} from '../../actions/apply'
+import {addPerson, delPerson, editPerson, initPerson} from '../../actions/apply'
 
 class ActivityApply extends Component {
     constructor () {
@@ -21,7 +21,7 @@ class ActivityApply extends Component {
 
     componentDidMount () {
         const {dispatch} = this.props
-        dispatch(addPerson())
+        dispatch(initPerson())
     }
 
     submit () {

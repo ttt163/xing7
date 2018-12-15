@@ -5,21 +5,30 @@
  */
 
 import { APPLY } from '../constants/index'
-
+const defObj = {
+    'name': '', // 真实姓名
+    'phone': '', // 手机号码
+    'nickName': '', // 微信昵称
+    'idCard': '', // 身份证号
+    'site': '' // 上车地点
+}
 const applyInfo = (state = {persons: []}, action) => {
     switch (action.type) {
-        case APPLY.APPLY_ADD_PERSON:
-            let defObj = {
-                'name': '', // 真实姓名
-                'phone': '', // 手机号码
-                'nickName': '', // 微信昵称
-                'idCard': '', // 身份证号
-                'site': '' // 上车地点
+        case APPLY.APPLY_INIT_PERSON:
+            return {
+                ...state,
+                persons: [
+                    {
+                        ...JSON.parse(JSON.stringify(defObj)),
+                        ...action.obj
+                    }
+                ]
             }
+        case APPLY.APPLY_ADD_PERSON:
             let persons = [
                 ...state.persons,
                 {
-                    ...defObj,
+                    ...JSON.parse(JSON.stringify(defObj)),
                     ...action.obj
                 }
             ]

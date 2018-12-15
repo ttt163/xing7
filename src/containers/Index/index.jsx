@@ -28,7 +28,8 @@ class Index extends Component {
         let recommendSwiper = new Swiper('.activity-swiper-warp .swiper-container', {
             loop: true
         })
-        recommendSwiper.autoplay = true
+        console.log(recommendSwiper)
+        // recommendSwiper.autoplay = true
         /* let swiperItem = $('.activity-swiper-warp').find('.swiper-slide')
         if (swiperItem.length > 1) {
             let winW = document.body.scrollWidth
