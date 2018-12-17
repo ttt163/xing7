@@ -10,7 +10,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const ROOT_PATH = resolve(__dirname)
 const SRC_PATH = resolve(ROOT_PATH, 'src')
-const DIST_PATH = resolve(ROOT_PATH, 'dist')
+const DIST_PATH = resolve(ROOT_PATH, 'distRecat')
 const LIBS_PATH = resolve(ROOT_PATH, 'libs')
 const TEM_PATH = resolve(LIBS_PATH, 'template')
 
