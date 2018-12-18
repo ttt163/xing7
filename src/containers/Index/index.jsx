@@ -26,7 +26,8 @@ class Index extends Component {
     }
     setSwiper () {
         let recommendSwiper = new Swiper('.activity-swiper-warp .swiper-container', {
-            loop: true
+            loop: true,
+            autoplay: 2000
         })
         console.log(recommendSwiper)
         // recommendSwiper.autoplay = true

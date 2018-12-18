@@ -7,29 +7,19 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const autoprefixer = require('autoprefixer')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const config = require('./base.confog')
 
 const ROOT_PATH = resolve(__dirname)
-const SRC_PATH = resolve(ROOT_PATH, 'src')
-const DIST_PATH = resolve(ROOT_PATH, 'distRecat')
-const LIBS_PATH = resolve(ROOT_PATH, 'libs')
-const TEM_PATH = resolve(LIBS_PATH, 'template')
+const SRC_PATH = resolve(ROOT_PATH, config.srcPath)
+const DIST_PATH = resolve(ROOT_PATH, config.buildPath)
+const LIBS_PATH = resolve(ROOT_PATH, config.libsPath)
+const TEM_PATH = resolve(LIBS_PATH, config.templatePath)
 
 module.exports = {
     devtool: 'source-map',
     entry: {
         index: resolve(SRC_PATH, 'index.jsx'),
-        vendors: [
-            'axios',
-            'babel-polyfill',
-            'react',
-            'react-dom',
-            'react-redux',
-            'react-router',
-            'react-router-redux',
-            'redux',
-            'redux-devtools-extension',
-            'redux-thunk'
-        ]
+        vendors: config.vendors
     },
     output: {
         path: DIST_PATH,
@@ -82,8 +72,7 @@ module.exports = {
         extensions: ['.js', '.jsx', '.json', '.scss']
     },
     externals: {
-        zepto: '$',
-        jquery: '$'
+        zepto: '$'
     },
     plugins: [
         new StyleLintPlugin(),
@@ -107,11 +96,9 @@ module.exports = {
             dry: false
         }),
         new webpack.ProvidePlugin({
-            $: 'zepto' || 'jquery',
+            $: 'zepto',
             zepto: 'zepto',
-            jQuery: 'jquery',
-            'window.zepto': 'zepto',
-            'window.jQuery': 'jquery'
+            'window.zepto': 'zepto'
         }),
         new webpack.DefinePlugin({
             'process.env': {
@@ -129,9 +116,9 @@ module.exports = {
             names: ['vendors']
         }),
         new HtmlWebpackPlugin({
-            title: '微信商城',
-            keywords: '微信商城',
-            description: '微信商城',
+            title: config.html.title,
+            keywords: config.html.keywords,
+            description: config.html.description,
             filepath: DIST_PATH,
             template: resolve(TEM_PATH, 'index.html'),
             chunks: ['index', 'vendors'],

@@ -9,18 +9,24 @@
     border-radius: rem(8);
     //overflow: hidden;
     background: #fff;
+    position: relative;
 
     .top {
         //height: rem(247);
         overflow: hidden;
-        position: relative;
+        //position: relative;
         color: #fff;
+        $topWidth: 370;
+        $topHeight: 247;
 
         .item-status {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate3d(-50%, -50%, 0);
+            $top: ($topHeight - 200) / 2;
+            $left: ($topWidth - 200) / 2;
+
+            top: rem($top);
+            left: rem($left);
+            //transform: translate3d(rem($top), rem($left), 0);
             background-color: rgba(102, 102, 102, 0.6);
             width: rem(200);
             height: rem(200);
@@ -44,7 +50,8 @@
             position: absolute;
             z-index: 3;
             left: rem(16);
-            bottom: rem(10);
+            //bottom: rem(10);
+            top: rem($topHeight - 26 - 10);
             background: rgba(0, 0, 0, 0.5);
             padding: 0 rem(20);
             font-size: rem(24);

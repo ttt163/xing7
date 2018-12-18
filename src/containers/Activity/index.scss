@@ -2,6 +2,8 @@
 
 .activity-wrap {
     padding-top: rem(10);
+    box-sizing: border-box;
     height: 100%;
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }

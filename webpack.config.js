@@ -3,17 +3,18 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
 const autoprefixer = require('autoprefixer')
+const config = require('./base.confog')
 
 const ROOT_PATH = resolve(__dirname)
-const SRC_PATH = resolve(ROOT_PATH, 'src')
-const DIST_PATH = resolve(ROOT_PATH, 'distRecat')
-const LIBS_PATH = resolve(ROOT_PATH, 'libs')
-const TEM_PATH = resolve(LIBS_PATH, 'template')
+const SRC_PATH = resolve(ROOT_PATH, config.srcPath)
+const DIST_PATH = resolve(ROOT_PATH, config.buildPath)
+const LIBS_PATH = resolve(ROOT_PATH, config.libsPath)
+const TEM_PATH = resolve(LIBS_PATH, config.templatePath)
 
 module.exports = {
     devtool: 'eval-source-map',
     entry: {
-        index: resolve(SRC_PATH, 'index.jsx')
+        index: config.devVendors.concat(resolve(SRC_PATH, 'index.jsx'))
     },
     output: {
         path: DIST_PATH,
@@ -61,20 +62,17 @@ module.exports = {
         extensions: ['.js', '.jsx', '.json', '.scss']
     },
     externals: {
-        zepto: '$',
-        jquery: '$'
+        zepto: '$'
     },
     plugins: [
         new StyleLintPlugin(),
         new webpack.ProvidePlugin({
-            $: 'zepto' || 'jquery',
+            $: 'zepto',
             zepto: 'zepto',
-            jQuery: 'jquery',
-            'window.zepto': 'zepto',
-            'window.jQuery': 'jquery'
+            'window.zepto': 'zepto'
         }),
         new HtmlWebpackPlugin({
-            title: 'title',
+            title: config.html.title,
             filepath: DIST_PATH,
             template: resolve(TEM_PATH, 'index.html'),
             chunks: ['index'],
@@ -87,17 +85,8 @@ module.exports = {
         hot: true,
         historyApiFallback: true,
         contentBase: ROOT_PATH,
-        // host: '10.236.78.220',
-        host: '192.168.31.101',
-        // host: '127.0.0.1',
-        port: '3002',
-        proxy: {'/api': {
-            context: ['/*', '/*/*', '/*/*/*'],
-            // target: 'http://test.lk.8864.com',
-            target: 'http://188.131.179.44:8080',
-            changeOrigin: true,
-            ws: true,
-            secure: false
-        }}
+        host: config.host,
+        port: config.port,
+        proxy: config.proxy
     }
 }

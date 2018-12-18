@@ -3,9 +3,9 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { Router, hashHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
-import $ from 'jquery'
+// import $ from 'jquery'
 
-import 'babel-polyfill'
+// import 'babel-polyfill'
 import rootRoutes from './routes'
 import store from './store/index'
 
