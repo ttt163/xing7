@@ -3,7 +3,7 @@
  * Time：2018/11/5
  * Description：Description
  */
-
+const sourceUrl = 'http://188.131.179.44'
 // 导航
 const navData = [
     {key: 'home', label: '首页', path: '/', icon: 'icon-home'},
@@ -13,5 +13,6 @@ const navData = [
 ]
 
 export {
+    sourceUrl,
     navData
 }

@@ -32,6 +32,7 @@
             .activity-img {
                 width: rem(240);
                 height: rem(240);
+                box-sizing: border-box;
                 border-radius: rem(8);
                 overflow: hidden;
                 position: absolute;
@@ -131,7 +132,7 @@
         .footer {
             display: flex;
             justify-content: space-between;
-            background-color: #f9f9f9;
+            //background-color: #f9f9f9;
             color: #666;
             font-size: rem(26);
             height: rem(100);
