@@ -9,3 +9,9 @@ export const APPLY = {
     APPLY_DEL_PERSON: 'APPLY_DEL_PERSON',
     APPLY_EDIT_PERSON: 'APPLY_EDIT_PERSON'
 }
+
+// 活动
+export const Activity = {
+    GET_LIST: 'ACTIVITY_GET_LIST',
+    ADD_DATA: 'ACTIVITY_ADD_DATA'
+}

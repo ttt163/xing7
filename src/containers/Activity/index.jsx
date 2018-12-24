@@ -4,9 +4,16 @@ import {setPageTitle} from '../../actions/public'
 import {connect} from 'react-redux'
 import ActivityItem from '../../components/ActivityListItem'
 import LoadMore from '../../components/LoadMore'
-import {axiosAjax} from '../../public'
+import {getActivityList} from '../../actions/activity'
 
 class Activity extends Component {
+    constructor () {
+        super()
+        this.state = {
+            currentPage: 1,
+            sizePage: 10
+        }
+    }
     componentWillMount () {
         const {dispatch} = this.props
         dispatch(setPageTitle('活动汇总'))
@@ -16,13 +23,13 @@ class Activity extends Component {
     }
     // 活动列表
     getActivity () {
+        const {dispatch} = this.props
+        const {currentPage, sizePage} = this.state
         let sendData = {
-            'currentPage': 1,
-            'sizePage': 10
+            'currentPage': currentPage,
+            'sizePage': sizePage
         }
-        axiosAjax('post', '/api/club/actives/getAllActives', sendData, (res) => {
-            console.log(res, '===')
-        })
+        dispatch(getActivityList(sendData))
     }
     // 加载更多
     loadingMore (e) {
@@ -55,7 +62,7 @@ class Activity extends Component {
 const mapStateToProps = (state) => {
     console.log(state)
     return {
-        publicInfo: state.publicInfo
+        list: state.activity.list
     }
 }
 
