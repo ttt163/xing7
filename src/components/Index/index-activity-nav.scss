@@ -1,0 +1,39 @@
+/**
+ * Author：tantingting
+ * Time：2018/12/29
+ * Description：Description
+ */
+@import "../../../libs/scss/rem";
+@import "../../../libs/scss/theme";
+
+.index-nav-warp {
+    background: #fff;
+    margin-bottom: rem(20);
+    display: flex;
+    justify-content: space-around;
+    padding-top: rem(15);
+    padding-bottom: rem(10);
+
+    .nav-item {
+        margin-bottom: rem(10);
+
+        a {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    i {
+        color: $color;
+        margin-bottom: rem(5);
+        font-size: rem(44);
+    }
+
+    a {
+        color: #666;
+        display: block;
+        font-size: rem(28);
+    }
+}

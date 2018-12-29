@@ -7,12 +7,12 @@
 
 @font-face {
     font-family: 'iconfont';  /* project id 899224 */
-    src: url('//at.alicdn.com/t/font_899224_9ieco2pde3r.eot');
+    src: url('//at.alicdn.com/t/font_899224_i78kpwgqca.eot');
     src:
-        url('//at.alicdn.com/t/font_899224_9ieco2pde3r.eot?#iefix') format('embedded-opentype'),
-        url('//at.alicdn.com/t/font_899224_9ieco2pde3r.woff') format('woff'),
-        url('//at.alicdn.com/t/font_899224_9ieco2pde3r.ttf') format('truetype'),
-        url('//at.alicdn.com/t/font_899224_9ieco2pde3r.svg#iconfont') format('svg');
+        url('//at.alicdn.com/t/font_899224_i78kpwgqca.eot?#iefix') format('embedded-opentype'),
+        url('//at.alicdn.com/t/font_899224_i78kpwgqca.woff') format('woff'),
+        url('//at.alicdn.com/t/font_899224_i78kpwgqca.ttf') format('truetype'),
+        url('//at.alicdn.com/t/font_899224_i78kpwgqca.svg#iconfont') format('svg');
 }
 
 .iconfont {
@@ -117,4 +117,25 @@
 
 .icon-wdjf:before {
     content: '\e60e';
+}
+
+// 节假日
+.icon-yuandan:before {
+    content: '\e698';
+}
+
+.icon-chunjie:before {
+    content: '\e83c';
+}
+
+.icon-shengdan:before {
+    content: '\e605';
+}
+
+.icon-guoqin:before {
+    content: '\e6b2';
+}
+
+.icon-wuyi:before {
+    content: '\e634';
 }

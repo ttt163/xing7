@@ -4,11 +4,8 @@
  * Description：Description
  */
 
-
 import {Activity} from '../constants'
-import {axiosAjax} from "../public";
-
-
+import {axiosAjax} from '../public'
 
 export const getActivityList = (sendData) => (dispatch) => {
     axiosAjax('post', '/api/club/actives/getAllActivesToMobil', sendData, (res) => {

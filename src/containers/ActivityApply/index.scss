@@ -224,7 +224,7 @@ $color: #ff7f00;
         & > div {
             display: flex;
             margin-left: rem(24);
-            line-height: rem(120);
+            line-height: rem(100);
             font-size: rem(28);
 
             i {
@@ -241,8 +241,8 @@ $color: #ff7f00;
         .btn {
             display: block;
             width: rem(320);
-            height: rem(120);
-            line-height: rem(120);
+            //height: rem(120);
+            line-height: rem(100);
             text-align: center;
             color: #fff;
             background-color: $color;
@@ -265,7 +265,7 @@ $color: #ff7f00;
 
         .price-content {
             position: absolute;
-            bottom: rem(120);
+            bottom: rem(100);
             background-color: #fff;
             width: 100%;
             color: #505050;

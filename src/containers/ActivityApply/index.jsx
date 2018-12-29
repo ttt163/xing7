@@ -25,8 +25,17 @@ class ActivityApply extends Component {
     }
 
     submit () {
+        if (!this.validateForm()) {
+            return
+        }
         hashHistory.push('/order-detail')
     }
+
+    // 校验
+    validateForm () {
+        return true
+    }
+
     render () {
         const {showPrice} = this.state
         const {applyInfo, dispatch} = this.props

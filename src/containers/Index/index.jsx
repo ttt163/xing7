@@ -9,6 +9,7 @@ import xing7 from '../../public/img/xing7.jpg'
 import IndexActivityItem from '../../components/Index/index-activity-item'
 import {Link} from 'react-router'
 import ActivityItem from '../../components/ActivityListItem'
+import IndexActivityNav from '../../components/Index/index-activity-nav'
 
 class Index extends Component {
     componentWillMount () {
@@ -55,6 +56,8 @@ class Index extends Component {
         return <div className='index-warp'>
             {/* 首页轮播 */}
             <ActivitySwiper />
+            {/* 导航 */}
+            <IndexActivityNav />
             {/* 推荐活动 */}
             <div className="activity-recommend">
                 <div className="recommend-label">
