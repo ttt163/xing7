@@ -6,6 +6,7 @@ import DetailFooter from '../../components/ActivityDetail/footer'
 import PhoneList from '../../components/ActivityDetail/phone-list'
 import SelectBox from '../../components/ActivityDetail/selectBox'
 import ActivityRecommend from '../../components/ActivityRecommend'
+import {getActivityDetail} from '../../actions/detail'
 
 class ActivityDetail extends Component {
     constructor () {
@@ -18,6 +19,12 @@ class ActivityDetail extends Component {
     componentWillMount () {
         const {dispatch} = this.props
         dispatch(setPageTitle('活动标题'))
+        this.getDetail()
+    }
+
+    getDetail () {
+        const {dispatch} = this.props
+        dispatch(getActivityDetail({activeId: ''}))
     }
 
     changePhoneList () {
@@ -119,7 +126,7 @@ class ActivityDetail extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        publicInfo: state.publicInfo
+        detailData: state.detailData
     }
 }
 

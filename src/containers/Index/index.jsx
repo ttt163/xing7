@@ -2,28 +2,28 @@ import React, { Component } from 'react'
 import './index.scss'
 import {setPageTitle} from '../../actions/public'
 import {connect} from 'react-redux'
-// import {axiosAjax, calculatePx} from '../../public/index'
-import {axiosAjax} from '../../public/index'
 import ActivitySwiper from '../../components/Index/activity-swiper'
 import xing7 from '../../public/img/xing7.jpg'
 import IndexActivityItem from '../../components/Index/index-activity-item'
 import {Link} from 'react-router'
 import ActivityItem from '../../components/ActivityListItem'
 import IndexActivityNav from '../../components/Index/index-activity-nav'
+import {getBannerList} from '../../actions/index'
 
 class Index extends Component {
     componentWillMount () {
         const {dispatch} = this.props
         dispatch(setPageTitle('首页'))
-        let data = {
-            userName: 'zhaom',
-            password: 'zhaom'
-        }
-        axiosAjax('post', 'api/login', data, (res) => {
-        })
     }
     componentDidMount () {
         this.setSwiper()
+        this.getBannerData()
+    }
+    getBannerData () {
+        const {dispatch} = this.props
+        dispatch(getBannerList()).then(() => {
+            this.setSwiper()
+        })
     }
     setSwiper () {
         let recommendSwiper = new Swiper('.activity-swiper-warp .swiper-container', {
@@ -31,24 +31,6 @@ class Index extends Component {
             autoplay: 2000
         })
         console.log(recommendSwiper)
-        // recommendSwiper.autoplay = true
-        /* let swiperItem = $('.activity-swiper-warp').find('.swiper-slide')
-        if (swiperItem.length > 1) {
-            let winW = document.body.scrollWidth
-            let itemW = calculatePx(680)
-            let space = calculatePx(20)
-            let recommendSwiper = new Swiper('.activity-swiper-warp .swiper-container', {
-                width: itemW * 3 + space * 2,
-                slidesPerView: 3,
-                initialSlide: 1,
-                slidesOffsetBefore: (winW - itemW - space * 2) / 2 + space,
-                spaceBetween: space,
-                grabCursor: true,
-                loop: true
-            })
-            console.log(recommendSwiper)
-            // recommendSwiper.autoplay = true
-        } */
     }
     render () {
         console.log(this.props)
@@ -161,7 +143,7 @@ class Index extends Component {
 const mapStateToProps = (state) => {
     // console.log(state)
     return {
-        publicInfo: state.publicInfo
+        indexData: state.indexData
     }
 }
 

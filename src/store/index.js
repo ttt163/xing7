@@ -4,7 +4,7 @@ import thunk from 'redux-thunk'
 import { routerMiddleware } from 'react-router-redux'
 import { hashHistory } from 'react-router'
 
-import rootReducer from '../reducers/index'
+import rootReducer from '../reducers/root'
 
 const router = routerMiddleware(hashHistory)
 export default createStore(rootReducer, composeWithDevTools(

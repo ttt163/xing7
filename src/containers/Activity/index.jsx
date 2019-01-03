@@ -11,7 +11,9 @@ class Activity extends Component {
         super()
         this.state = {
             currentPage: 1,
-            sizePage: 10
+            sizePage: 10,
+            pageCount: 1,
+            hasMore: false
         }
     }
     componentWillMount () {
@@ -29,32 +31,40 @@ class Activity extends Component {
             'currentPage': currentPage,
             'sizePage': sizePage
         }
-        dispatch(getActivityList(sendData))
+        // console.log(dispatch(getActivityList(sendData)))
+        dispatch(getActivityList(sendData)).then((res) => {
+            const {totalData} = res.page
+            let pageCount = Math.ceil(totalData / sizePage)
+            this.setState({
+                ...this.state,
+                pageCount: pageCount,
+                hasMore: !(!pageCount || currentPage===pageCount)
+            })
+        })
     }
     // 加载更多
     loadingMore (e) {
+        const {hasMore} = this.state
+        if (!hasMore) {
+            return
+        }
         if ($('.loading-more').offset().top - $(e.target).offset().top < $(e.target).height()) {
             console.log('加载更多')
         }
     }
     render () {
+        const {hasMore} = this.state
+        const {list} = this.props
         return <div className="activity-wrap" onScroll={(e) => { this.loadingMore(e) }}>
             <div className="activity-list clearfix">
-                <ActivityItem />
-                <ActivityItem />
-                <ActivityItem />
-                <ActivityItem />
-                <ActivityItem />
-                <ActivityItem />
-                <ActivityItem />
-                <ActivityItem />
-                <ActivityItem />
-                <ActivityItem />
-                <ActivityItem />
-                <ActivityItem />
+                {
+                    list.map((item, index) => (
+                        <ActivityItem item={item} key={index} />
+                    ))
+                }
             </div>
             {/* 加载更多 */}
-            <LoadMore />
+            <LoadMore hasMore={hasMore} />
         </div>
     }
 }

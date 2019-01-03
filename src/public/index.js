@@ -1,5 +1,6 @@
 import axios from 'axios'
 import qs from 'qs'
+import {sourceUrl} from './config'
 
 export const axiosPost = (url, params, fn) => {
     axios.post(url, qs.stringify(params)).then(function (response) {
@@ -36,7 +37,7 @@ export const axiosAjax = (type, url, params, fn) => {
     axios({
         ...opt
     }).then(function (response) {
-        fn(response)
+        fn(response.data)
     }).catch(function (error) {
         console.log(error)
     })
@@ -60,4 +61,8 @@ export const calculatePx = (x) => {
     let rootFontsize = parseInt($('html').css('fontSize'))
     let fontSizt750 = (750 / 320) * 12
     return x * rootFontsize / fontSizt750
+}
+
+export const setImg = (imgPath) => {
+    return `${sourceUrl}/${imgPath}`
 }

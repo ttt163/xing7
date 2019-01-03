@@ -8,15 +8,18 @@ import {Activity} from '../constants'
 import {axiosAjax} from '../public'
 
 export const getActivityList = (sendData) => (dispatch) => {
-    axiosAjax('post', '/api/club/actives/getAllActivesToMobil', sendData, (res) => {
-        console.log(res)
-        if (res.code === 1) {
-            let {result} = res.result.result
-            if (!result) {
-                return
+    return new Promise((resolve, reject) => {
+        axiosAjax('post', '/api/club/actives/getAllActivesToMobil', sendData, (res) => {
+            if (res.code === 1) {
+                resolve(res.result)
+                let {actives} = res.result
+                if (!actives) {
+                    dispatch(addData({list: []}))
+                    return
+                }
+                dispatch(addData({list: actives}))
             }
-            dispatch(addData({list: result}))
-        }
+        })
     })
 }
 

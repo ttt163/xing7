@@ -15,3 +15,14 @@ export const Activity = {
     GET_LIST: 'ACTIVITY_GET_LIST',
     ADD_DATA: 'ACTIVITY_ADD_DATA'
 }
+
+// 首页
+export const Index = {
+    GET_BANNER_LIST: 'GET_BANNER_LIST',
+    ADD_DATA: 'INDEX_ADD_DATA'
+}
+
+// 详情
+export const Detail = {
+    GET_DETAIL: 'GET_DETAIL'
+}

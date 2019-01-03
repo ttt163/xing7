@@ -1,0 +1,132 @@
+添加活动后台流程：
+	点击保存  ---》（1）先上传图片  根据form-data格式
+	接口为/api/club/img/ope/fileUpload
+		{
+			"uploadImage":"file"
+		}
+
+		让系统保存图片成功之后 返回参数中包含系统生成的文件名  sysFileName
+		
+		（2）再去调用添加活动接口 如下  其中imgName  就是图片上传成功后的sysFileName
+//添加活动接口
+/api/club/actives/addActiveByImageName
+
+{
+	"imgName":"活动图片名",
+	"title":"活动标题",
+	"leaderId":"领队id",
+	"gatherAddress":"集合地点",
+	"destAddress":"目的地",
+	"joinStart":"报名开始时间",
+	"joinEnd":"报名结束时间",
+	"mustInfo":"活动要求填写的必要字段",
+	"activeIntroId":"活动概要",
+	"wheelImg":0不轮播  1轮播,
+	"activeType":1户外活动  2 室内活动,
+	"addType":1跨省活动 2本省活动,
+	"activeIntro":{  //将富文本中的内容（包含html标签）截成字符串   每个字段不超过1000字
+		"content1":"content1", 
+		"content2":"content2",
+		"content3":"content3",
+		"content4":"content4",
+	},
+	"batchs":[
+			{
+				"startTime":"本批次开始时间",
+				"endTime":"本批次结束时间",
+				"activeType":"0为不重复，1为每日重复 2为每周重复  3为每月重复",
+				"bathName":"本批次的名字",
+				"price":"价格",
+				"vipPrice":"vip价格",
+				"maxPeople":"活动最多可报名人数",
+				"currentPeople":"该批次目前已报名人数",
+				"payType":"0不支持线下支付  1可支持线下"
+			}
+		],
+}
+
+刪除活動接口：
+	后台将活动分成了两个大部分：活动主体  、 活动批次
+	
+	接口：/api/club/actives/deleteActiveById
+	参数：{
+			"activeId":活动id  -----》必填参数
+			"common":"true"------->该参数指定 活动主体是否删除  选填参数
+			"imgName":"图片url"------》选填参数
+		  }
+		
+	后台返回参数：{"code":1,"message":"success","result":{"detail":"活动相关内容已全部删除成功"}}
+		code：1正常 0不正常
+		message：success  成功 error失败
+		result:介绍
+		
+		
+查询所有的活动：
+	接口：/api/club/actives/getAllActives
+	参数："currentPage":当前页  "sizePage":一页显示数 ,"status": 1上架 2 下架  9推荐 10正在报名  11报名结束 12活动结束
+	
+	后台返回参数：actives:是一个活动数组
+					page: 页码信息
+					
+查询每个活动详情：
+	接口：/api/club/actives/getActiveDatilByActiveId
+	参数："activeId":活动id
+	
+	后台返回参数：这个活动整体内容
+	
+-----------------------------------------
+查询所有必填信息
+	接口：/api/club/actives/getSignName
+	返回参数：所有字段以及id
+更新活动  
+	1、编辑图片
+		接口/api/club/actives/updateImage
+		参数：activeId:活动id   如果能获取到图片名就加上参数 "imageName":单纯的图片名
+		返回参数 ：替换后的图片名
+	2、编辑后动内容
+		接口：/api/club/actives/updateActive
+		参数：
+		{
+			"activeId":活动id，
+			//"imgName":"活动图片名",--------》不要图片名了  
+			"title":"活动标题",
+			"leaderId":"领队id",
+			"gatherAddress":"集合地点",
+			"destAddress":"目的地",
+			"joinStart":"报名开始时间",
+			"joinEnd":"报名结束时间",
+			"mustInfo":"活动要求填写的必要字段",
+			"activeIntroId":"活动概要",
+			"wheelImg":0不轮播  1轮播,
+			"activeType":1户外活动  2 室内活动,
+			"addType":1跨省活动 2本省活动,
+			"activeIntro":{  //将富文本中的内容（包含html标签）截成字符串   每个字段不超过1000字
+				"content1":"content1", 
+				"content2":"content2",
+				"content3":"content3",
+				"content4":"content4",
+				"activeId":活动id，-----------------》活动id
+			},
+			"batchs":[
+					{
+						"batchId":批次id，---------------------》这是和添加活动不一样的地方
+						"startTime":"本批次开始时间",
+						"endTime":"本批次结束时间",
+						"activeType":"0为不重复，1为每日重复 2为每周重复  3为每月重复",
+						"bathName":"本批次的名字",
+						"price":"价格",
+						"vipPrice":"vip价格",
+						"maxPeople":"活动最多可报名人数",
+						"currentPeople":"该批次目前已报名人数",
+						"payType":"0不支持线下支付  1可支持线下"
+					},
+					{},
+					{}
+				],
+		}
+	返回参数 修改结果
+	
+	188.131.179.44/image/active/ecc103ce-76e7-4865-ac1c-95eb1a9163d8.jpg
+	
+	http://188.131.179.44/image/active/b5d62a25-e42c-44dc-9fa1-7c08c9a45632.jpg
+	

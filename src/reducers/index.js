@@ -1,14 +1,15 @@
-import { combineReducers } from 'redux'
-import { routerReducer } from 'react-router-redux'
-import publicInfo from './public'
-import applyInfo from './apply'
-import activity from './activity'
-const reducers = Object.assign({
-    publicInfo,
-    applyInfo,
-    activity,
-    routing: routerReducer
-})
+import { Index } from '../constants/index'
 
-const rootReducer = combineReducers(reducers)
-export default rootReducer
+const indexData = (state = {bannerList: []}, action) => {
+    switch (action.type) {
+        case Index.GET_BANNER_LIST:
+            return {
+                ...state,
+                bannerList: action.list
+            }
+        default:
+            return state
+    }
+}
+
+export default indexData
