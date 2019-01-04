@@ -24,5 +24,6 @@ export const Index = {
 
 // 详情
 export const Detail = {
-    GET_DETAIL: 'GET_DETAIL'
+    GET_DETAIL: 'GET_DETAIL',
+    SELECT_BATCH: 'SELECT_BATCH'
 }

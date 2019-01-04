@@ -25,13 +25,20 @@ const applyInfo = (state = {persons: []}, action) => {
                 ]
             }
         case APPLY.APPLY_ADD_PERSON:
-            let persons = [
-                ...state.persons,
-                {
-                    ...JSON.parse(JSON.stringify(defObj)),
-                    ...action.obj
+            let persons = state.persons
+            if (!action.num) {
+                persons = [
+                    ...persons,
+                    {
+                        ...JSON.parse(JSON.stringify(defObj)),
+                        ...action.obj
+                    }
+                ]
+            } else {
+                for (let i = 0; i < action.num; i++) {
+                    persons.push(JSON.parse(JSON.stringify(defObj)))
                 }
-            ]
+            }
             return {
                 ...state,
                 persons: persons

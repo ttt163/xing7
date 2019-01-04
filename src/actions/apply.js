@@ -13,10 +13,10 @@ export const initPerson = (obj) => {
     }
 }
 
-export const addPerson = (obj) => {
+export const addPerson = (num) => {
     return {
         type: APPLY.APPLY_ADD_PERSON,
-        obj
+        num
     }
 }
 

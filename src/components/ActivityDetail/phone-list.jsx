@@ -9,22 +9,22 @@ import './phone-list.scss'
 
 export default class PhoneList extends Component {
     render () {
-        const {hideList, isShow} = this.props
+        const {hideList, isShow, user} = this.props
         return (
             <div className={!isShow ? 'phone-list-warp hide' : 'phone-list-warp'} >
                 <div className="mask" onClick={() => hideList()}></div>
                 <ul className="phone-list">
                     <li>
-                        <a href="tel:18618372012">
+                        <a href={`tel:${user.mobilePhone}`}>
                             <i className="iconfont icon-phone"></i>
                             <div>
-                                李燕
+                                {user.userName}
                                 <span className="captain-tag">领队</span>
                             </div>
                         </a>
                     </li>
                     <li>
-                        <a href="tel:18618372012">
+                        <a href="tel:18745779017">
                             <i className="iconfont icon-phone"></i>
                             <div>
                                 小七

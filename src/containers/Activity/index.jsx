@@ -38,7 +38,7 @@ class Activity extends Component {
             this.setState({
                 ...this.state,
                 pageCount: pageCount,
-                hasMore: !(!pageCount || currentPage===pageCount)
+                hasMore: !(!pageCount || currentPage === pageCount)
             })
         })
     }

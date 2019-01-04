@@ -106,6 +106,8 @@
 
     .activity-info {
         background: #fff;
+        width: 100%;
+        overflow-x: hidden;
 
         .info-title {
             height: rem(80);

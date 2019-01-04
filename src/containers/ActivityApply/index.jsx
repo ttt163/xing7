@@ -20,8 +20,11 @@ class ActivityApply extends Component {
     }
 
     componentDidMount () {
-        const {dispatch} = this.props
+        const {dispatch, detailData} = this.props
+        const {batch} = detailData
+        console.log(batch.selectPerson)
         dispatch(initPerson())
+        dispatch(addPerson(batch.selectPerson - 1))
     }
 
     submit () {
@@ -38,26 +41,27 @@ class ActivityApply extends Component {
 
     render () {
         const {showPrice} = this.state
-        const {applyInfo, dispatch} = this.props
+        const {applyInfo, dispatch, detailData} = this.props
         const {persons} = applyInfo
+        const {data, batch} = detailData
         return <div className="apply-warp">
             <div className="top">
-                <h1>蹦床交友派对蹦床交友派对——出大招！放福利！蹦床交友派对——出大招！放福利！——出大招！放福利！</h1>
+                <h1>{data.title}</h1>
                 <div>
                     <label>集合地：</label>
-                    <p>北京 朝阳  惠新西街南口 </p>
+                    <p>{data.gatherAddress}</p>
                 </div>
                 <div>
                     <label>目的地：</label>
-                    <p>北京 朝阳  惠新西街南口 </p>
+                    <p>{data.destAddress}</p>
                 </div>
                 <div>
                     <label>活动批次：</label>
-                    <p>周六 </p>
+                    <p>{batch.bathName} </p>
                 </div>
                 <div>
                     <label>单价:</label>
-                    <p className="price">¥119/人</p>
+                    <p className="price">{batch.price}/人</p>
                 </div>
             </div>
             <div className="apply-legend">
@@ -156,7 +160,8 @@ class ActivityApply extends Component {
 const mapStateToProps = (state) => {
     // console.log(state)
     return {
-        applyInfo: state.applyInfo
+        applyInfo: state.applyInfo,
+        detailData: state.detailData
     }
 }
 

@@ -66,3 +66,42 @@ export const calculatePx = (x) => {
 export const setImg = (imgPath) => {
     return `${sourceUrl}/${imgPath}`
 }
+
+// 格式化时间
+const zero = (m) => {
+    return m < 10 ? '0' + m : m
+}
+export const formatDateToDay = (date, str) => {
+    let _str = !str ? '-' : str
+    let time = new Date(date)
+    let year = time.getFullYear()
+    let m = time.getMonth() + 1
+    let d = time.getDate()
+    if (date) {
+        return `${year}${_str}${zero(m)}${_str}${zero(d)}`
+    } else {
+        return ''
+    }
+}
+export const formatDateToDayNotYear = (date, str) => {
+    let _str = !str ? '-' : str
+    let time = new Date(date)
+    // let year = time.getFullYear()
+    let m = time.getMonth() + 1
+    let d = time.getDate()
+    if (date) {
+        return `${zero(m)}${_str}${zero(d)}`
+    } else {
+        return ''
+    }
+}
+
+export const formatDateRagge = (start, end, str) => {
+    let currDate = new Date()
+    let endDate = new Date(end)
+    if (endDate.getFullYear() > currDate.getFullYear()) {
+        return `${formatDateToDay(start, str)}-${formatDateToDay(end, str)}`
+    } else {
+        return `${formatDateToDayNotYear(start, str)}-${formatDateToDayNotYear(end, str)}`
+    }
+}
