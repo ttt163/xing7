@@ -6,7 +6,7 @@ import {setImg, formatDateRagge} from '../../public'
 export default class ActivityItem extends Component {
     render () {
         const {pathName, item} = this.props
-        const {batchs} = item
+        const {activeBath} = item
         return (
             <Link to={{pathname: '/activity-detail', query: {activityId: item.activeId}}} className='activity-item'>
                 {
@@ -20,7 +20,7 @@ export default class ActivityItem extends Component {
                             {/* <div className="item-status">已结束</div> */}
                             {parseInt(item.isopen) === 9 ? <div className="item-recommend"></div> : ''}
                             {
-                                !batchs || !batchs[0].startTime ? '' : <div className="item-time">{formatDateRagge(batchs[0].startTime, batchs[0].endTime, '/')}}</div>
+                                !activeBath || !activeBath.startTime ? '' : <div className="item-time">{formatDateRagge(activeBath.startTime, activeBath.endTime, '/')}}</div>
                             }
                         </div>
                     )
@@ -32,15 +32,15 @@ export default class ActivityItem extends Component {
                             <div className="item-site">
                                 <p>{item.gatherAddress}</p>
                                 <span>|</span>
-                                <p>{!batchs || !batchs[0].currentPeople ? 0 : batchs[0].currentPeople}人已报名</p>
+                                <p>{!activeBath || !activeBath.currentPeople ? 0 : activeBath.currentPeople}人已报名</p>
                             </div>
                         )
                     }
                     {
-                        !batchs || !batchs[0].price ? (
+                        !activeBath || !activeBath.price ? (
                             <div className="item-price">￥0（<i className="iconfont icon-vip"></i>￥0）</div>
                         ) : (
-                            <div className="item-price">￥{batchs[0].price}（<i className="iconfont icon-vip"></i>￥{batchs[0].vipPrice}）<sub>起</sub></div>
+                            <div className="item-price">￥{activeBath.price}（<i className="iconfont icon-vip"></i>￥{activeBath.vipPrice}）<sub>起</sub></div>
                         )
                     }
                 </div>

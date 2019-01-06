@@ -11,16 +11,17 @@ import {setPageTitle} from './public'
 
 export const getActivityDetail = (sendData) => (dispatch) => {
     return new Promise((resolve) => {
-        axiosAjax('post', '/api/club/actives/getActiveDatilByActiveId', sendData, (res) => {
+        axiosAjax('post', '/api/club/actives/getActiveDatilByActiveIdForMobile', sendData, (res) => {
             if (res.code === 1) {
-                let {result} = res
-                if (!result) {
+                let {oneActive, sameActive} = res.result
+                if (!oneActive) {
                     hashHistory.goBack()
                 }
-                resolve(result)
-                dispatch(setPageTitle(result.title))
-                dispatch(getDetail(result))
-                dispatch(selectBatch(result.batchs[0]))
+                resolve(oneActive)
+                dispatch(setPageTitle(oneActive.title))
+                dispatch(getDetail(oneActive))
+                dispatch(selectBatch(oneActive.batchs[0]))
+                dispatch(setRecommend(!sameActive ? [] : sameActive))
             }
         })
     })
@@ -36,5 +37,12 @@ export const selectBatch = (obj) => {
     return {
         type: Detail.SELECT_BATCH,
         obj
+    }
+}
+
+export const setRecommend = (list) => {
+    return {
+        type: Detail.ADD_RECOMMEND,
+        list
     }
 }

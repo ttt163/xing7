@@ -14,10 +14,6 @@ export const getBannerList = () => (dispatch) => {
             if (res.code === 1) {
                 let {result} = res
                 resolve(res)
-                if (!result) {
-                    dispatch(addBannerData(result))
-                    return
-                }
                 dispatch(addBannerData(result))
             }
         })

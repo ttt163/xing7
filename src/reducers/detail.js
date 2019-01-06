@@ -1,6 +1,6 @@
 import {Detail} from '../constants/index'
 
-const detailData = (state = {data: null, batch: null}, action) => {
+const detailData = (state = {data: null, batch: null, recommend: []}, action) => {
     switch (action.type) {
         case Detail.GET_DETAIL:
             return {
@@ -11,6 +11,11 @@ const detailData = (state = {data: null, batch: null}, action) => {
             return {
                 ...state,
                 batch: action.obj
+            }
+        case Detail.ADD_RECOMMEND:
+            return {
+                ...state,
+                recommend: action.list
             }
         default:
             return state

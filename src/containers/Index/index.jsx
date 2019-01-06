@@ -6,7 +6,7 @@ import ActivitySwiper from '../../components/Index/activity-swiper'
 import xing7 from '../../public/img/xing7.jpg'
 import IndexActivityItem from '../../components/Index/index-activity-item'
 import {Link} from 'react-router'
-import ActivityItem from '../../components/ActivityListItem'
+// import ActivityItem from '../../components/ActivityListItem'
 import IndexActivityNav from '../../components/Index/index-activity-nav'
 import {getBannerList} from '../../actions/index'
 
@@ -33,11 +33,12 @@ class Index extends Component {
         console.log(recommendSwiper)
     }
     render () {
-        console.log(this.props)
-        const {location} = this.props
+        // const {location} = this.props
+        const {indexData} = this.props
+        const {bannerList} = indexData
         return <div className='index-warp'>
             {/* 首页轮播 */}
-            <ActivitySwiper />
+            <ActivitySwiper list={bannerList} />
             {/* 导航 */}
             <IndexActivityNav />
             {/* 推荐活动 */}
@@ -76,9 +77,7 @@ class Index extends Component {
                 </div>
                 <div className="x-scroll">
                     <div className='list'>
-                        <ActivityItem pathName={location.pathname} />
-                        <ActivityItem pathName={location.pathname} />
-                        <ActivityItem pathName={location.pathname} />
+                        {/* <ActivityItem pathName={location.pathname} /> */}
                     </div>
                 </div>
             </div>
@@ -92,10 +91,7 @@ class Index extends Component {
                     <Link to="/activity">更多<i className="iconfont icon-right"></i></Link>
                 </div>
                 <div className='list clearfix'>
-                    <ActivityItem pathName={location.pathname} />
-                    <ActivityItem pathName={location.pathname} />
-                    <ActivityItem pathName={location.pathname} />
-                    <ActivityItem pathName={location.pathname} />
+                    {/* <ActivityItem pathName={location.pathname} /> */}
                 </div>
             </div>
             {/* 户外活动 */}
@@ -108,10 +104,7 @@ class Index extends Component {
                     <Link to="/activity">更多<i className="iconfont icon-right"></i></Link>
                 </div>
                 <div className='list clearfix'>
-                    <ActivityItem pathName={location.pathname} />
-                    <ActivityItem pathName={location.pathname} />
-                    <ActivityItem pathName={location.pathname} />
-                    <ActivityItem pathName={location.pathname} />
+                    {/* <ActivityItem pathName={location.pathname} /> */}
                 </div>
             </div>
             {/* 星七团建 */}

@@ -70,7 +70,7 @@ class ActivityDetail extends Component {
     render () {
         const {showPhoneList, showSelectBox, timeStr} = this.state
         const {dispatch, detailData} = this.props
-        const {data, batch} = detailData
+        const {data, batch, recommend} = detailData
         return (
             !data || !batch ? <div className="detail-warp"></div> : (
                 <div className="detail-warp">
@@ -143,7 +143,9 @@ class ActivityDetail extends Component {
                         </div>
                     </div>
                     {/* 相关推荐 */}
-                    <ActivityRecommend />
+                    {
+                        !recommend.length ? '' : <ActivityRecommend list={recommend} />
+                    }
                     {/* 选择批次 */}
                     <SelectBox isShow={showSelectBox} hideBox={() => this.setState({showSelectBox: false})} data={data} select={batch} selectBatch={(obj) => dispatch(selectBatch(obj))} />
                     {/* 底部 */}

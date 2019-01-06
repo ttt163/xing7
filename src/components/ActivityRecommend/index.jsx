@@ -10,6 +10,7 @@ import RecommendItem from '../ActivityRecommendItem'
 
 export default class ActivityRecommend extends Component {
     render () {
+        const {list} = this.props
         return (
             <div className="activity-recommend">
                 <div className="recommend-title">
@@ -17,8 +18,11 @@ export default class ActivityRecommend extends Component {
                     <div className="line"></div>
                 </div>
                 <div className="recommend-list clearfix">
-                    <RecommendItem />
-                    <RecommendItem />
+                    {
+                        list.map((item, index) => (
+                            <RecommendItem key={index} item={item} />
+                        ))
+                    }
                 </div>
             </div>
         )
