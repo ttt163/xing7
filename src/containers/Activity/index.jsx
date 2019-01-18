@@ -53,6 +53,7 @@ class Activity extends Component {
         }
     }
     render () {
+        console.log(this)
         const {hasMore} = this.state
         const {list} = this.props
         return <div className="activity-wrap" onScroll={(e) => { this.loadingMore(e) }}>

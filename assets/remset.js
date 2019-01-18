@@ -4,7 +4,12 @@
     var recalc = function () {
         var clientWidth = docEl.clientWidth;
         if (!clientWidth) return;
-        docEl.style.fontSize = (clientWidth * 28.125 / 750).toFixed(5) + 'px';//(最小字体12px,最小宽度320,设计图当前宽度640=>计算出24)
+        if(clientWidth>=750){
+            docEl.style.fontSize = '28.125px';
+        }else{
+            docEl.style.fontSize = (clientWidth * 28.125 / 750).toFixed(5) + 'px';//(最小字体12px,最小宽度320,设计图当前宽度750=>计算出28.125)
+        }
+        // docEl.style.fontSize = (clientWidth * 28.125 / 750).toFixed(5) + 'px';//(最小字体12px,最小宽度320,设计图当前宽度640=>计算出24)
     };
     recalc();
     if (!doc.addEventListener) return;

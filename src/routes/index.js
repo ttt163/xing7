@@ -17,7 +17,7 @@ const rootRoutes = <div>
                 callback(null, require('../containers/Index').default)
             }, 'Index')
         }}/>
-        <Route path='/activity' getComponent={(nextState, callback) => {
+        <Route path='/activity(/:type)' getComponent={(nextState, callback) => {
             require.ensure([], (require) => {
                 callback(null, require('../containers/Activity').default)
             }, 'Activity')

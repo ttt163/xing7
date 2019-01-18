@@ -14,11 +14,11 @@ const navData = [
 
 // 首页活动导航
 const activityNavData = [
-    {key: 'shengdan', label: '圣诞', path: '/activity', icon: 'icon-shengdan'},
-    {key: 'yuandan', label: '元旦', path: '/activity', icon: 'icon-yuandan'},
-    {key: 'chunjie', label: '春节', path: '/activity', icon: 'icon-chunjie'},
-    {key: 'wuyi', label: '五一', path: '/activity', icon: 'icon-wuyi'},
-    {key: 'guoqing', label: '国庆', path: '/activity', icon: 'icon-guoqin'}
+    {key: 'shengdan', label: '圣诞', path: '/activity/yd', icon: 'icon-shengdan'},
+    {key: 'yuandan', label: '元旦', path: '/activity/sd', icon: 'icon-yuandan'},
+    {key: 'chunjie', label: '春节', path: '/activity/cj', icon: 'icon-chunjie'},
+    {key: 'wuyi', label: '五一', path: '/activity/wy', icon: 'icon-wuyi'},
+    {key: 'guoqing', label: '国庆', path: '/activity/gq', icon: 'icon-guoqin'}
 ]
 
 export {

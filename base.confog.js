@@ -5,8 +5,8 @@
  */
 
 module.exports = {
-    // host: '10.host236.78.220',
-    host: '192.168.31.101',
+    host: '10.236.78.234',
+    // host: '192.168.31.101',
     port: '3020',
     publicPath: './',
     // publicPath: 'http://www.huoxing24.com/static/',

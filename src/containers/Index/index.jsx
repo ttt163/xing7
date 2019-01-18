@@ -8,7 +8,8 @@ import IndexActivityItem from '../../components/Index/index-activity-item'
 import {Link} from 'react-router'
 // import ActivityItem from '../../components/ActivityListItem'
 import IndexActivityNav from '../../components/Index/index-activity-nav'
-import {getBannerList} from '../../actions/index'
+import {getBannerList, getActivitys} from '../../actions/index'
+import ActivityItem from '../../components/ActivityListItem'
 
 class Index extends Component {
     componentWillMount () {
@@ -18,6 +19,7 @@ class Index extends Component {
     componentDidMount () {
         this.setSwiper()
         this.getBannerData()
+        this.getActivity()
     }
     getBannerData () {
         const {dispatch} = this.props
@@ -32,10 +34,21 @@ class Index extends Component {
         })
         console.log(recommendSwiper)
     }
+    // 活动列表
+    getActivity () {
+        const {dispatch} = this.props
+        let sendData = {
+            'currentPage': 1,
+            'sizePage': 10
+        }
+        // console.log(dispatch(getActivityList(sendData)))
+        dispatch(getActivitys(sendData))
+    }
     render () {
+        // 休闲 一日游 两日游 长线 户外 派对 室内 团建
         // const {location} = this.props
         const {indexData} = this.props
-        const {bannerList} = indexData
+        const {bannerList, exclusiveList, indoorList, outdoorList} = indexData
         return <div className='index-warp'>
             {/* 首页轮播 */}
             <ActivitySwiper list={bannerList} />
@@ -77,6 +90,11 @@ class Index extends Component {
                 </div>
                 <div className="x-scroll">
                     <div className='list'>
+                        {
+                            exclusiveList.map((item, index) => (
+                                <ActivityItem item={item} key={index} pathName={location.pathname} />
+                            ))
+                        }
                         {/* <ActivityItem pathName={location.pathname} /> */}
                     </div>
                 </div>
@@ -91,6 +109,11 @@ class Index extends Component {
                     <Link to="/activity">更多<i className="iconfont icon-right"></i></Link>
                 </div>
                 <div className='list clearfix'>
+                    {
+                        indoorList.map((item, index) => (
+                            <ActivityItem item={item} key={index} pathName={location.pathname} />
+                        ))
+                    }
                     {/* <ActivityItem pathName={location.pathname} /> */}
                 </div>
             </div>
@@ -104,6 +127,11 @@ class Index extends Component {
                     <Link to="/activity">更多<i className="iconfont icon-right"></i></Link>
                 </div>
                 <div className='list clearfix'>
+                    {
+                        outdoorList.map((item, index) => (
+                            <ActivityItem item={item} key={index} pathName={location.pathname} />
+                        ))
+                    }
                     {/* <ActivityItem pathName={location.pathname} /> */}
                 </div>
             </div>

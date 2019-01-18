@@ -20,7 +20,7 @@ export default class ActivityItem extends Component {
                             {/* <div className="item-status">已结束</div> */}
                             {parseInt(item.isopen) === 9 ? <div className="item-recommend"></div> : ''}
                             {
-                                !activeBath || !activeBath.startTime ? '' : <div className="item-time">{formatDateRagge(activeBath.startTime, activeBath.endTime, '/')}}</div>
+                                !activeBath || !activeBath.startTime ? '' : <div className="item-time">{formatDateRagge(activeBath.startTime, activeBath.endTime, '/')}</div>
                             }
                         </div>
                     )
